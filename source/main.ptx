@@ -5,18 +5,29 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>Solutions to Mathematical Applications with Statistics, 7th Ed.
+      by Wackerly, Mendenhall, and Scheaffer
+    </title>
+    <!-->
+    <subtitle>Solutions/site by</subtitle>
+    -->
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./chapter-01.ptx" />
+    <xi:include href="./chapter-02.ptx" />
+    <xi:include href="./chapter-03.ptx" />
+    <xi:include href="./chapter-04.ptx" />
+    <xi:include href="./chapter-05.ptx" />
+    <xi:include href="./chapter-06.ptx" />
 
 
     <!-- Include backmatter -->
+    <!--
     <xi:include href="./backmatter.ptx" />
+    -->
 
   </book>
 </pretext>

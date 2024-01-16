@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section-06-01" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+
+  <p> A measure of the goodness of an estimate is the <em>error of estimation,</em>
+  the difference between the estimate and the parameter estimated 
+  (for example, the difference between <m>\overline{y}</m> and <m>\mu</m>). </p>
+
+  <p>
+    We will assume throughout the remainder of this text that populations are large in comparison to the sample size
+    and consequently that the random variables obtained through a random sample are in fact independent of one another. 
+  </p>
+
+</section>

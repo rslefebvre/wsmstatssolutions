@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section-06-03" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Method of Distribution Functions</title>
+
+  <p> Text of section. </p>
+
+  <exercises xml:id="exercises-06-03" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise number="6.1">
+      <introduction>
+        <p>
+          Let <m>Y</m> be a random variable with probability density function given by
+          <me>
+            f(y) = 
+            \begin{cases}
+              2(1 - y), \amp 0 \leq y \leq 1,\\
+              0, \amp \text{elsewhere.}
+            \end{cases}
+          </me>
+        </p>
+      </introduction>
+      
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U_1 = 2Y - 1</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U_2 = 1 - 2Y</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U_3 = Y^2</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find <m>E(U_1)</m>, <m>E(U_2)</m>, and <m>E(U_3)</m> by using the derived density functions for these random variables.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find <m>E(U_1)</m>, <m>E(U_2)</m>, and <m>E(U_3)</m> by the methods of Chapter 4.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise number="6.2">
+      
+    </exercise>
+    
+  </exercises>
+
+</section>
