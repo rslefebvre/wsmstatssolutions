@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section-05-02" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bivariate and Multivariate Probability Distributions</title>
+
+  <p> Text of section. </p>
+
+  <exercises xml:id="exercises-05-02" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise number="5.1">
+      <introduction>
+        Contracts for two construction jobs are randomly assigned to one or more of three firms, A, B, and C.
+        Let <m>Y_1</m> denote the number of contracts assigned to firm A and <m>Y_2</m> the number of contracts assigned to firm B.
+        Recall that each firm can receive 0, 1, or 2 contracts.
+      </introduction>
+
+      <task>
+        <statement>
+            <p>
+              Find the joint probability function for <m>Y_1</m> and <m>Y_2</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+            Treating the two construction jobs as distinguishable, each job has 3 possible firms it can be assigned to, for a total of <m>3^2 = 9</m> possible assignment of the two jobs.
+            Let the ordered triple <m>(j_1 j_2, , )</m> represent the assignment of jobs 1 and 2 both to firm A, with other assignment ordered triples defined similarly.
+            Then the 9 possible assignments are <m>\{(j_1 j_2, , ), (j_1, j_2, ), (j_1, , j_2), (j_2, j_1, ), ( , j_1 j_2, ), ( , j_1, j_2), (j_2, , j_1), ( , j_2, j_1), ( , , j_1 j_2)\}</m>.
+            Each probability given by the joint probability function for <m>Y_1</m> and <m>Y_2</m>, <m>P(Y_1 = y_1, Y_2 = y_2)</m>, will be the number of assignments where firm A is assigned <m>y_1</m> jobs and firm B is assigned <m>y_2</m> jobs, all divided by the total number of possible assignments, 9.
+            The table below gives all such probabilities <m>p(y_1, y_2) = P(Y_1 = y_1, Y_2 = y_2)</m>:
+            </p>
+
+            <table>
+                <tabular>
+                    <row bottom="minor" headers="yes">
+                        <cell right="minor">
+
+                        </cell>
+                        <cell colspan="3" halign="center">
+                            <m>y_1</m>
+                        </cell>
+                    </row>
+                    <row bottom="minor">
+                        <cell halign="center" right="minor">
+                            <m>y_2</m>
+                        </cell>
+                        <cell halign="center">
+                            0
+                        </cell>
+                        <cell halign="center">
+                            1
+                        </cell>
+                        <cell halign="center">
+                            2
+                        </cell>
+                    </row>
+                    <row>
+                        <cell right="minor">
+                            0
+                        </cell>
+                        <cell halign="center">
+                            1/9
+                        </cell>
+                        <cell halign="center">
+                            2/9
+                        </cell>
+                        <cell halign="center">
+                            1/9
+                        </cell>
+                    </row>
+                    <row>
+                        <cell halign="center" right="minor">
+                            1
+                        </cell>
+                        <cell halign="center">
+                            2/9
+                        </cell>
+                        <cell halign="center">
+                            2/9
+                        </cell>
+                        <cell halign="center">
+                            0
+                        </cell>
+                    </row>
+                    <row>
+                        <cell halign="center" right="minor">
+                            2
+                        </cell>
+                        <cell halign="center">
+                            1/9
+                        </cell>
+                        <cell halign="center">
+                            0
+                        </cell>
+                        <cell halign="center">
+                            0
+                        </cell>
+                    </row>
+                </tabular>
+            </table>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+            <p>
+                Find <m>F(1, 0)</m>.
+            </p>
+        </statement>
+        <solution>
+            <me>F(1, 0) = \sum_{t_1 \leq 1} \sum_{t_2 \leq 0} p(t_1, t_2) = p(0, 0) + p(1, 0) = \frac{1}{9} + \frac{2}{9} = \frac{3}{9} = \frac{1}{3}
+            </me>
+        </solution>
+      </task>
+    </exercise>
+
+  </exercises>
+
+</section>
