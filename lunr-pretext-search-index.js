@@ -109,6 +109,24 @@ var ptx_lunr_docs = [
   "body": " Introduction  Text of section.  "
 },
 {
+  "id": "section-05-02",
+  "level": "1",
+  "url": "section-05-02.html",
+  "type": "Section",
+  "number": "5.2",
+  "title": "Bivariate and Multivariate Probability Distributions",
+  "body": " Bivariate and Multivariate Probability Distributions  Text of section.   Contracts for two construction jobs are randomly assigned to one or more of three firms, A, B, and C. Let denote the number of contracts assigned to firm A and the number of contracts assigned to firm B. Recall that each firm can receive 0, 1, or 2 contracts.  Find the joint probability function for and .   Treating the two construction jobs as distinguishable, each job has 3 possible firms it can be assigned to, for a total of possible assignment of the two jobs. Let the ordered triple represent the assignment of jobs 1 and 2 both to firm A, with other assignment ordered triples defined similarly. Then the 9 possible assignments are . Each probability given by the joint probability function for and , , will be the number of assignments where firm A is assigned jobs and firm B is assigned jobs, all divided by the total number of possible assignments, 9. The table below gives all such probabilities :               0  1  2    0  1\/9  2\/9  1\/9    1  2\/9  2\/9  0    2  1\/9  0  0      Find .      "
+},
+{
+  "id": "exercises-05-02-1",
+  "level": "2",
+  "url": "section-05-02.html#exercises-05-02-1",
+  "type": "Exercise",
+  "number": "5.2.5.1",
+  "title": "",
+  "body": "Contracts for two construction jobs are randomly assigned to one or more of three firms, A, B, and C. Let denote the number of contracts assigned to firm A and the number of contracts assigned to firm B. Recall that each firm can receive 0, 1, or 2 contracts.  Find the joint probability function for and .   Treating the two construction jobs as distinguishable, each job has 3 possible firms it can be assigned to, for a total of possible assignment of the two jobs. Let the ordered triple represent the assignment of jobs 1 and 2 both to firm A, with other assignment ordered triples defined similarly. Then the 9 possible assignments are . Each probability given by the joint probability function for and , , will be the number of assignments where firm A is assigned jobs and firm B is assigned jobs, all divided by the total number of possible assignments, 9. The table below gives all such probabilities :               0  1  2    0  1\/9  2\/9  1\/9    1  2\/9  2\/9  0    2  1\/9  0  0      Find .    "
+},
+{
   "id": "section-06-01",
   "level": "1",
   "url": "section-06-01.html",
