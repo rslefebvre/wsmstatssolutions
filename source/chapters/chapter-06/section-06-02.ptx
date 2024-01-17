@@ -3,6 +3,42 @@
 <section xml:id="section-06-02" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Finding the Probability Distribution of a Function of Random Variables</title>
 
-  <p> Text of section. </p>
+  <p>
+    We will present three methods for finding the probability distribution for a function of random variables and a fourth method for finding the <em>joint</em> distribution of several functions of random variables.
+    Any one of these may be employed to find the distribution of a given function of the variables, but one of the methods usually leads to a simpler derivation than the others.
+    The method that works <q>best</q> varies from one application to another.
+    The fourth method is presented in <xref ref="section-06-06"></xref>.
+    Although the first three methods will be discussed separately in the next three sections, a brief summary of each of these methods is provided here.
+  </p>
+
+  <remark>
+    <p>
+      Consider random variables <m>Y_1, Y_2, ..., Y_n</m> and a function <m>U(Y_1, Y_2, ..., Y_n)</m>, denoted simply as <m>U</m>.
+      Then three of the methods for finding the probability distribution of <m>U</m> are as follows:
+    </p>
+
+    <p>
+      1. The method of distribution functions: This method is typically used when the <m>Y</m>'s have continuous distributions.
+      First, find the distribution function for <m>U</m>, <m>F_U(u) = P(U \leq u)</m>, by using the methods that we discussed in <xref ref="chapter-05"></xref>.
+      To do so, we must find the region in the <m>y_1, y_2, ..., y_n</m> space for which <m>U \leq u</m> and then find <m>P(U \leq u)</m> by integrating <m>f(y_1, y_2, ..., y_n)</m> over this region.
+      The density function for <m>U</m> is then obtained by differentiating the distribution function, <m>F_U(u)</m>.
+      A detailed account of this procedure will be presented in <xref ref="section-06-03"></xref>.
+    </p>
+
+    <p>
+      2. The method of transformations: If we are given the density function of a random variable <m>Y</m>, the method of transformations results in a general expression for the density of <m>U = h(Y)</m> for an increasing or decreasing function <m>h(y)</m>.
+      Then if <m>Y_1</m> and <m>Y_2</m> have a bivariate distribution, we can use the univariate result explained earlier to find the joint density of <m>Y_1</m> and <m>U = h(Y_1, Y_2)</m>.
+      By intergrating over <m>y_1</m>, we find the marginal probability density function of <m>U</m>, which is our objective.
+      This method will be illustrated in <xref ref="section-06-04"></xref>.
+    </p>
+
+    <p>
+      3. The method of moment-generating functions: This method is based on a uniqueness theorem, <xref provisional="thm-6-1"/>, which states that, if two random variables have identical moment-generating functions, the two random variable possess the same probability distributions.
+      To use this method, we must find the moment-generating function for <m>U</m> and compare it with the moment-generating functions for the common discrete and continuous random variables derived in Chapters <xref ref="chapter-03" text="custom">3</xref> and <xref ref="chapter-04" text="custom">4</xref>.
+      If it is identical to one of these moment-generating functions, the probability distribution of <m>U</m> can be identified because of the uniqueness theorem.
+      Applications of the method of moment-generating functions will be presented in <xref ref="section-06-05"></xref>.
+      Probability-generating functions can be employed in a way similar to the method of moment-generating functions.
+    </p>
+  </remark>
 
 </section>
