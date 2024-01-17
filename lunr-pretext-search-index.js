@@ -223,7 +223,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Finding the Probability Distribution of a Function of Random Variables",
-  "body": " Finding the Probability Distribution of a Function of Random Variables  Text of section.  "
+  "body": " Finding the Probability Distribution of a Function of Random Variables  We will present three methods for finding the probability distribution for a function of random variables and a fourth method for finding the joint distribution of several functions of random variables. Any one of these may be employed to find the distribution of a given function of the variables, but one of the methods usually leads to a simpler derivation than the others. The method that works best varies from one application to another. The fourth method is presented in . Although the first three methods will be discussed separately in the next three sections, a brief summary of each of these methods is provided here.   Consider random variables and a function , denoted simply as . Then three of the methods for finding the probability distribution of are as follows:  1. The method of distribution functions: This method is typically used when the 's have continuous distributions. First, find the distribution function for , , by using the methods that we discussed in . To do so, we must find the region in the space for which and then find by integrating over this region. The density function for is then obtained by differentiating the distribution function, . A detailed account of this procedure will be presented in .  2. The method of transformations: If we are given the density function of a random variable , the method of transformations results in a general expression for the density of for an increasing or decreasing function . Then if and have a bivariate distribution, we can use the univariate result explained earlier to find the joint density of and . By intergrating over , we find the marginal probability density function of , which is our objective. This method will be illustrated in .  3. The method of moment-generating functions: This method is based on a uniqueness theorem, , which states that, if two random variables have identical moment-generating functions, the two random variable possess the same probability distributions. To use this method, we must find the moment-generating function for and compare it with the moment-generating functions for the common discrete and continuous random variables derived in Chapters 3 and 4 . If it is identical to one of these moment-generating functions, the probability distribution of can be identified because of the uniqueness theorem. Applications of the method of moment-generating functions will be presented in . Probability-generating functions can be employed in a way similar to the method of moment-generating functions.   "
+},
+{
+  "id": "section-06-02-3",
+  "level": "2",
+  "url": "section-06-02.html#section-06-02-3",
+  "type": "Remark",
+  "number": "6.2.1",
+  "title": "",
+  "body": " Consider random variables and a function , denoted simply as . Then three of the methods for finding the probability distribution of are as follows:  1. The method of distribution functions: This method is typically used when the 's have continuous distributions. First, find the distribution function for , , by using the methods that we discussed in . To do so, we must find the region in the space for which and then find by integrating over this region. The density function for is then obtained by differentiating the distribution function, . A detailed account of this procedure will be presented in .  2. The method of transformations: If we are given the density function of a random variable , the method of transformations results in a general expression for the density of for an increasing or decreasing function . Then if and have a bivariate distribution, we can use the univariate result explained earlier to find the joint density of and . By intergrating over , we find the marginal probability density function of , which is our objective. This method will be illustrated in .  3. The method of moment-generating functions: This method is based on a uniqueness theorem, , which states that, if two random variables have identical moment-generating functions, the two random variable possess the same probability distributions. To use this method, we must find the moment-generating function for and compare it with the moment-generating functions for the common discrete and continuous random variables derived in Chapters 3 and 4 . If it is identical to one of these moment-generating functions, the probability distribution of can be identified because of the uniqueness theorem. Applications of the method of moment-generating functions will be presented in . Probability-generating functions can be employed in a way similar to the method of moment-generating functions.  "
 },
 {
   "id": "section-06-03",
@@ -251,6 +260,33 @@ var ptx_lunr_docs = [
   "number": "6.3.6.2",
   "title": "",
   "body": ""
+},
+{
+  "id": "section-06-04",
+  "level": "1",
+  "url": "section-06-04.html",
+  "type": "Section",
+  "number": "6.4",
+  "title": "The Method of Transformations",
+  "body": " The Method of Transformations  Text of section.  "
+},
+{
+  "id": "section-06-05",
+  "level": "1",
+  "url": "section-06-05.html",
+  "type": "Section",
+  "number": "6.5",
+  "title": "The Method of Moment-Generating Functions",
+  "body": " The Method of Moment-Generating Functions  Text of section.  "
+},
+{
+  "id": "section-06-06",
+  "level": "1",
+  "url": "section-06-06.html",
+  "type": "Section",
+  "number": "6.6",
+  "title": "Multivariable Transformations Using Jacobians",
+  "body": " Multivariable Transformations Using Jacobians  Text of section.  "
 }
 ]
 
