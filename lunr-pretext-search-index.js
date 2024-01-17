@@ -16,7 +16,25 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Introduction",
-  "body": " Introduction  Text of section.  "
+  "body": " Introduction  Numerous definitions of statistics are given, and each description implies that data are collected, with inference as the objective. Each requires selecting a subset of a large collection of data, either existent or conceptual, in order to infer the characteristics of the complete set. All the authors imply that statistics is a theory of information, with inference making as its objective .  The large body of data that is the target of our interest is called the population , and the subset selected from it is a sample Information useful in inferring some characteristic of a population (either existent or conceptual) is purchased in a specified quantity and results in an inference (estimation or decision) with an associated degree of goodness     For each of the following situations, identify the population of interest, the inferential objective, and how you might go about collecting a sample.   The National Highway Safety Council wants to estimate the proportion of automobile tires with unsafe tread among all tires manufactured by a specific company during the current production year.   The population of interest is all tires manufactured by a specific company during the current production year, the inferential objective is to estimate the proportion of tires with unsafe tread among the population, and a sample could be collected by taking measurements at the specific tire manufacturer.   A political scientist wants to determine whether a majority of adult residents of a state favor a unicameral legislature.   A medical scientist wants to estimate the average length of time until the recurrence of a certain disease.   An electrical engineer wants to determine whether the average length of life of transistors of a certain type is greater than 500 hours.   A university researcher wants to estimate the proportion of U.S. citizens from \"Generation X\" who are interested in starting their own businesses.   For more than a century, normal body temperature for humans has been accepted to be 98.6 Fahrenheit. Is it really? Researchers want to estimate the average temperature of healthy adults in the United States.   A city engineer wants to estimate the average weekly water consumption for single-family dwelling units in the city.    "
+},
+{
+  "id": "section-01-01-3",
+  "level": "2",
+  "url": "section-01-01.html#section-01-01-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "population sample degree of goodness "
+},
+{
+  "id": "exercises-01-01-1",
+  "level": "2",
+  "url": "section-01-01.html#exercises-01-01-1",
+  "type": "Exercise",
+  "number": "1.1.1.1",
+  "title": "",
+  "body": " For each of the following situations, identify the population of interest, the inferential objective, and how you might go about collecting a sample.   The National Highway Safety Council wants to estimate the proportion of automobile tires with unsafe tread among all tires manufactured by a specific company during the current production year.   The population of interest is all tires manufactured by a specific company during the current production year, the inferential objective is to estimate the proportion of tires with unsafe tread among the population, and a sample could be collected by taking measurements at the specific tire manufacturer.   A political scientist wants to determine whether a majority of adult residents of a state favor a unicameral legislature.   A medical scientist wants to estimate the average length of time until the recurrence of a certain disease.   An electrical engineer wants to determine whether the average length of life of transistors of a certain type is greater than 500 hours.   A university researcher wants to estimate the proportion of U.S. citizens from \"Generation X\" who are interested in starting their own businesses.   For more than a century, normal body temperature for humans has been accepted to be 98.6 Fahrenheit. Is it really? Researchers want to estimate the average temperature of healthy adults in the United States.   A city engineer wants to estimate the average weekly water consumption for single-family dwelling units in the city.  "
 },
 {
   "id": "section-01-02",
@@ -25,7 +43,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Characterizing a Set of Measurements: Graphical Methods",
-  "body": " Characterizing a Set of Measurements: Graphical Methods  Text of section.  "
+  "body": " Characterizing a Set of Measurements: Graphical Methods  An individual population (or any set of measurements) can be characterized by a relative frequency distribution , which can be represented by a relative frequency histogram . A graph is constructed by subdividing the axis of measurement into intervals of equal width. A rectangle is constructed over each interval, such that the height of the rectangle is proportional to the fraction of the total number of measurements falling in each cell Although they are arbitrary, a few guidelines can be very helpful in selecting the intervals. Points of subdivision of the axis of measurement should be chosen so that it is impossible for a measurement to fall on a point of division Using many intervals with a small amount of data results in little summarization and presents a picture very similar to that data in their original form. The larger the amount of data, the greater the number of included intervals can be while still presenting a satisfactory picture of the data. We suggest spanning the range of the data with from 5 to 20 intervals and using the larger number of intervals for larger quantities of data .  "
+},
+{
+  "id": "section-01-02-2",
+  "level": "2",
+  "url": "section-01-02.html#section-01-02-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "relative frequency distribution relative frequency histogram "
 },
 {
   "id": "section-01-03",
@@ -34,7 +61,61 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "Characterizing a Set of Measurements: Numerical Methods",
-  "body": " Characterizing a Set of Measurements: Numerical Methods  Text of section.  "
+  "body": " Characterizing a Set of Measurements: Numerical Methods  The quantities we define are numerical descriptive measures of a set of data. We seek some numbers that have meaningful interpretations and that can be used to describe the frequency distribution for any set of measurements. We will confine our attention to two types of descriptive numbers: measures of central tendency and measures of dispersion or variation .    The mean of a sample of measured responses is given by . The corresponding population mean is denoted .      The variance of a sample of measurements is the sum of the square of the differences between the measurements and their mean, divided by . Symbolically, the sample variance is . The corresponding population variance is denoted by the symbol .      The standard deviation of a sample of measurements is the positive square root of the variance; that is, . The corresponding population standard deviation is denoted by .     Empirical Rule  For a distribution of measurements that is approximately normal (bell-shaped), it follows that the interval with endpoints  contains approximately 68% of the measurements.  contains approximately 95% of the measurements.  contains almost all of the measurements.   Exercise 1.17 defines the range of a set of measurements as the difference between the largest value and the smallest value. It then states that the empirical rule suggests that the standard deviation of a set of measurements may be roughly approximated by one-fourth of the range, , range\/4. Later on, Exercise 1.26 (at the end of ) states that the greater the amount of data, the greater will be their tendency to contain a few extreme values that will inflate the range and have relatively little effect on , the sample standard deviation, and the authors ignored this phenomenon by suggesting using 4 in the ratio for finding a good approximation of in range\/4 because .    "
+},
+{
+  "id": "section-01-03-2",
+  "level": "2",
+  "url": "section-01-03.html#section-01-03-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "numerical descriptive measures measures of central tendency measures of dispersion or variation "
+},
+{
+  "id": "def-1.1",
+  "level": "2",
+  "url": "section-01-03.html#def-1.1",
+  "type": "Definition",
+  "number": "1.3.1",
+  "title": "",
+  "body": "  The mean of a sample of measured responses is given by . The corresponding population mean is denoted .   "
+},
+{
+  "id": "def-1.2",
+  "level": "2",
+  "url": "section-01-03.html#def-1.2",
+  "type": "Definition",
+  "number": "1.3.2",
+  "title": "",
+  "body": "  The variance of a sample of measurements is the sum of the square of the differences between the measurements and their mean, divided by . Symbolically, the sample variance is . The corresponding population variance is denoted by the symbol .   "
+},
+{
+  "id": "def-1.3",
+  "level": "2",
+  "url": "section-01-03.html#def-1.3",
+  "type": "Definition",
+  "number": "1.3.3",
+  "title": "",
+  "body": "  The standard deviation of a sample of measurements is the positive square root of the variance; that is, . The corresponding population standard deviation is denoted by .   "
+},
+{
+  "id": "empirical-rule",
+  "level": "2",
+  "url": "section-01-03.html#empirical-rule",
+  "type": "Remark",
+  "number": "1.3.4",
+  "title": "Empirical Rule.",
+  "body": " Empirical Rule  For a distribution of measurements that is approximately normal (bell-shaped), it follows that the interval with endpoints  contains approximately 68% of the measurements.  contains approximately 95% of the measurements.  contains almost all of the measurements.  "
+},
+{
+  "id": "section-01-03-7",
+  "level": "2",
+  "url": "section-01-03.html#section-01-03-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "range "
 },
 {
   "id": "section-01-04",

@@ -12,7 +12,7 @@
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Solutions to Mathematical Applications with Statistics, 7th Ed. by Wackerly, Mendenhall, and Scheaffer">
+<meta property="book:title" content="Notes and Solutions for Mathematical Applications with Statistics, 7th Ed. by Wackerly, Mendenhall, and Scheaffer">
 <meta property="book:author" content="Ricky Lefebvre">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
@@ -92,7 +92,7 @@ window.MathJax = {
 <body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Solutions to Mathematical Applications with Statistics, 7th Ed. by Wackerly, Mendenhall, and Scheaffer</span></a></h1>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Notes and Solutions for Mathematical Applications with Statistics, 7th Ed. by Wackerly, Mendenhall, and Scheaffer</span></a></h1>
 <p class="byline">Ricky Lefebvre</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -121,7 +121,10 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="section-01-01.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="section-01-02.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Characterizing a Set of Measurements: Graphical Methods</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="section-01-03.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Characterizing a Set of Measurements: Numerical Methods</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="section-01-03.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Characterizing a Set of Measurements: Numerical Methods</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="section-01-03.html#exercises-01-03" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="section-01-04.html" class="internal"><span class="codenumber">1.4</span> <span class="title">How Inferences Are Made</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="section-01-05.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Theory and Reality</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="section-01-06.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Summary</span></a></div></li>
@@ -165,7 +168,59 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-01-03"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Characterizing a Set of Measurements: Numerical Methods</span>
 </h2>
-<div class="para" id="section-01-03-2">Text of section.</div></section></div>
+<div class="para" id="section-01-03-2">The quantities we define are <dfn class="terminology">numerical descriptive measures</dfn> of a set of data. We seek some numbers that have meaningful interpretations and that can be used to describe the frequency distribution for any set of measurements. We will confine our attention to two types of descriptive numbers: <dfn class="terminology">measures of central tendency</dfn> and <dfn class="terminology">measures of dispersion or variation</dfn>.</div>
+<article class="definition definition-like" id="def-1.1"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-1.1-1-1">
+<div class="para">The <dfn class="terminology">mean</dfn> of a sample of <span class="process-math">\(n\)</span> measured responses <span class="process-math">\(y_1, y_2, ..., y_n\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline{y} = \frac{1}{n} \sum_{i = 1}^n y_i\text{.}
+\end{equation*}
+</div>
+<div class="para">The corresponding population mean is denoted <span class="process-math">\(\mu\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-1.2"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-1.2-1-1">
+<div class="para">The <dfn class="terminology">variance</dfn> of a sample of measurements <span class="process-math">\(y_1, y_2, ..., y_n\)</span> is the sum of the square of the differences between the measurements and their mean, divided by <span class="process-math">\(n - 1\text{.}\)</span> Symbolically, the sample variance is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s^2 = \frac{1}{n - 1} \sum_{i = 1}^n (y_i - \overline{y})^2\text{.}
+\end{equation*}
+</div>
+<div class="para">The corresponding population variance is denoted by the symbol <span class="process-math">\(\sigma^2\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="def-1.3"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="def-1.3-1-1">
+<div class="para">The <dfn class="terminology">standard deviation</dfn> of a sample of measurements is the positive square root of the variance; that is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s = \sqrt{s^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">The corresponding <em class="emphasis">population</em> standard deviation is denoted by <span class="process-math">\(\sigma = \sqrt{\sigma^2}\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="empirical-rule"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Empirical Rule.</span>
+</h3> <div class="para" id="empirical-rule-2">For a distribution of measurements that is approximately normal (bell-shaped), it follows that the interval with endpoints</div> <div class="para" id="empirical-rule-3">
+<span class="process-math">\(\mu \pm \sigma\)</span> contains approximately 68% of the measurements.</div> <div class="para" id="empirical-rule-4">
+<span class="process-math">\(\mu \pm 2 \sigma\)</span> contains approximately 95% of the measurements.</div> <div class="para" id="empirical-rule-5">
+<span class="process-math">\(\mu \pm 3 \sigma\)</span> contains almost all of the measurements.</div></article><div class="para logical" id="section-01-03-7">
+<div class="para">Exercise 1.17 defines the <dfn class="terminology">range</dfn> of a set of measurements as the difference between the largest value and the smallest value. It then states that the empirical rule suggests that the standard deviation of a set of measurements may be roughly approximated by one-fourth of the range, i.e., <span class="process-math">\(s \approx\)</span> range/4. Later on, Exercise 1.26 (at the end of <a href="section-01-06.html" class="internal" title="Section 1.6: Summary">Section 1.6</a>) states that the greater the amount of data, the greater will be their tendency to contain a few extreme values that will inflate the range and have relatively little effect on <span class="process-math">\(s\text{,}\)</span> the sample standard deviation, and the authors ignored this phenomenon by suggesting using 4 in the ratio for finding a good approximation of <span class="process-math">\(s\)</span> in range/4 because</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/section-01-06.html">
+\begin{equation*}
+\text{range} = \text{max} - \text{min} \approx (\overline{y} + 2s) - (\overline{y} - 2s) = 4s \implies \text{range}/4 \approx s \text{.}
+\end{equation*}
+</div>
+</div>
+<section class="exercises" id="exercises-01-03"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="section-01-02.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-01-04.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
