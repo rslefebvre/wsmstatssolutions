@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section-01-02" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Characterizing a Set of Measurements: Graphical Methods</title>
+
+  <p>
+    An individual population (or any set of measurements) can be characterized by a <term>relative frequency distribution</term>, which can be represented by a <term>relative frequency histogram</term>.
+    A graph is constructed by subdividing the axis of measurement into intervals of equal width.
+    A rectangle is constructed over each interval, such that the height of the rectangle is proportional to the <em>fraction</em> of the total number of measurements falling in each cell<ellipsis></ellipsis>
+    Although they are arbitrary, a few guidelines can be very helpful in selecting the intervals.
+    <em>Points of subdivision of the axis of measurement should be chosen so that it is impossible for a measurement to fall on a point of division</em><ellipsis></ellipsis>
+    Using many intervals with a small amount of data results in little summarization and presents a picture very similar to that data in their original form.
+    The larger the amount of data, the greater the number of included intervals can be while still presenting a satisfactory picture of the data.
+    <em>We suggest spanning the range of the data with from 5 to 20 intervals and using the larger number of intervals for larger quantities of data</em>.
+  </p>
+
+</section>

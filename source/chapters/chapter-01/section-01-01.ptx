@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section-01-01" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+
+  <p>
+    Numerous definitions of statistics are given, and each description implies that data are collected, with inference as the objective.
+    Each requires selecting a subset of a large collection of data, either existent or conceptual, in order to infer the characteristics of the complete set.
+    All the authors imply that <em>statistics is a theory of information, with inference making as its objective</em>.
+  </p>
+
+  <p>
+    The large body of data that is the target of our interest is called the <term>population</term>, and the subset selected from it is a <term>sample</term><ellipsis></ellipsis>
+    Information useful in inferring some characteristic of a population (either existent or conceptual) is purchased in a specified quantity and results in an inference (estimation or decision) with an associated <term>degree of goodness</term><ellipsis></ellipsis> 
+  </p>
+
+  <exercises xml:id="exercises-01-01">
+    <exercise number="1.1">
+      <introduction>
+        <p>
+          For each of the following situations, identify the population of interest, the inferential objective, and how you might go about collecting a sample.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            The National Highway Safety Council wants to estimate the proportion of automobile tires with unsafe tread among all tires manufactured by a specific company during the current production year.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            The population of interest is all tires manufactured by a specific company during the current production year,
+            the inferential objective is to estimate the proportion of tires with unsafe tread among the population,
+            and a sample could be collected by taking measurements at the specific tire manufacturer.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            A political scientist wants to determine whether a majority of adult residents of a state favor a unicameral legislature.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            A medical scientist wants to estimate the average length of time until the recurrence of a certain disease.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            An electrical engineer wants to determine whether the average length of life of transistors of a certain type is greater than 500 hours.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            A university researcher wants to estimate the proportion of U.S. citizens from "Generation X" who are interested in starting their own businesses.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            For more than a century, normal body temperature for humans has been accepted to be 98.6<degree></degree> Fahrenheit.
+            Is it really? Researchers want to estimate the average temperature of healthy adults in the United States.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            A city engineer wants to estimate the average weekly water consumption for single-family dwelling units in the city.
+          </p>
+        </statement>
+      </task>
+      
+    </exercise>
+    
+  </exercises>
+
+</section>
