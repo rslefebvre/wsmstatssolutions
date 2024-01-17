@@ -44,6 +44,14 @@
             A political scientist wants to determine whether a majority of adult residents of a state favor a unicameral legislature.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            The population of interest is adult residents of a state,
+            the inferential objective is to determine how high the proportion of adult residents in the state who favor a unicameral legislature is,
+            and a sample could be collected by polling adult residents in the state.
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -52,6 +60,14 @@
             A medical scientist wants to estimate the average length of time until the recurrence of a certain disease.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            The population of interest is people who have had a certain disease,
+            the inferential objective is estimating the average length of time until the disease recurs in someone who has had it before,
+            and a sample could be collected by consulting a database of medical records for people who have experienced the disease.
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -60,6 +76,14 @@
             An electrical engineer wants to determine whether the average length of life of transistors of a certain type is greater than 500 hours.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            The population of interest is transistors of a certain type,
+            the inferential objective is determining whether that type of transistor has an average lifespan of more than 500 hours,
+            and a sample could be collected by by measuring how long each transistor in a sample of transistors of that type lasts for.
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -68,6 +92,14 @@
             A university researcher wants to estimate the proportion of U.S. citizens from "Generation X" who are interested in starting their own businesses.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            The population of interest is U.S. citizens from Generation X,
+            the inferential objective is to determine the proportion of U.S. citzen Gen X-ers who are interesting in starting their own businesses,
+            and a sample could be collected by polling U.S. citizen Gen X-ers.
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -77,6 +109,14 @@
             Is it really? Researchers want to estimate the average temperature of healthy adults in the United States.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            The population of interest is healthy adults in the United States,
+            the inferential objective is estimating the average temperature of health adults in the United States,
+            and a sample could be collected by measuring the temperature of a sample of healthy adults in the United States.
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -85,6 +125,14 @@
             A city engineer wants to estimate the average weekly water consumption for single-family dwelling units in the city.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            The population of interest is single-family dwelling units in the city,
+            the inferential objective is to estimate the average weekly water consumption for single-family dwelling units in the city,
+            and a sample could be collected by measuring the water consumption of a sample of single-family dwelling units in the city.
+          </p>
+        </solution>
       </task>
       
     </exercise>
