@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">(Example 6.5 in the book).</span>
+</h3> <div class="para">Let <span class="process-math">\(U\)</span> be a uniform random variable on the interval <span class="process-math">\((0, 1)\text{.}\)</span> Find a transformation <span class="process-math">\(G(U)\)</span> such that <span class="process-math">\(G(U)\)</span> possesses an exponential distribution with mean <span class="process-math">\(\beta\text{.}\)</span>
+</div> <details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical">
+<div class="para">If <span class="process-math">\(U\)</span> possesses  a uniform distribution on the interval <span class="process-math">\((0, 1)\text{,}\)</span> then the distribution function of <span class="process-math">\(U\)</span> (see <code class="code-inline tex2jax_ignore">[provisional cross-reference: ex-4.38]</code>) is given by</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F_U(u) =
+\begin{cases}
+0, \amp u \lt 1,\\
+u, \amp 0 \leq u \leq 1,\\
+1, \amp u \gt 1.
+\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(Y\)</span> denote a random variable that has an exponential distribution with mean <span class="process-math">\(\beta\text{.}\)</span> Then (see <code class="code-inline tex2jax_ignore">[provisional cross-reference: section-4.6]</code>) <span class="process-math">\(Y\)</span> has distribution function</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F_Y(y) = 
+\begin{cases}
+0, \amp y \lt 0,\\
+1 - e^{-y / \beta}, \amp y \geq 0.
+\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Notice that <span class="process-math">\(F_Y(y)\)</span> is strictly increasing on the interval <span class="process-math">\([0, \infty)\text{.}\)</span> Let <span class="process-math">\(0 \lt u \lt 1\)</span> and observe that there is a unique value <span class="process-math">\(y\)</span> such that <span class="process-math">\(F_Y(y) = u\text{.}\)</span> Thus, <span class="process-math">\(F_Y^{-1}(u), 0 \lt u \lt 1\text{,}\)</span> is well-defined. In this case, <span class="process-math">\(F_Y(y) = 1 - e^{-y / \beta} = u\)</span> if and only if <span class="process-math">\(y = -\beta \ln(1 - u) = F_Y^{-1}(u)\text{.}\)</span> Consider the random variable <span class="process-math">\(F_Y^{-1}(U) = -\beta \ln(1 - U)\)</span> and observe that, if <span class="process-math">\(y \gt 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+P(F_Y^{-1}(U) \leq y) \amp = P[-\beta \ln(1 - U) \leq y]\\
+\amp = P[\ln(1 - U) \geq -y / \beta]\\
+\amp = P(U \leq 1 - e^{-y / \beta})\\
+\amp = 1 - e^{-y / \beta}.
+\end{align*}
+</div>
+<div class="para">Also, <span class="process-math">\(P[F_Y^{-1}(U) \leq y] = 0\)</span> if <span class="process-math">\(y \leq 0\text{.}\)</span> Thus, <span class="process-math">\(F_Y^{-1}(U) = -\beta \ln(1 - U)\)</span> possesses an exponential distribution with mean <span class="process-math">\(\beta\text{,}\)</span> as desired.</div>
+</div>
+</div></details></article><span class="incontext"><a class="internal" href="sec-6.3.html#exa-6.5">in-context</a></span>
+</body>
+</html>
