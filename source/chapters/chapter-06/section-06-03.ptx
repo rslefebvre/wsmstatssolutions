@@ -1,12 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="section-06-03" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-6.3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Method of Distribution Functions</title>
 
-  <p> Text of section. </p>
+  <remark>
+    <title>Summary of the Distribution Function Method</title>
+    <p>
+      Let <m>U</m> be a function of the random variables <m>Y_1, Y_2, ..., Y_n</m>.
+      <ol>
+        <li>
+          Find the region <m>U = u</m> in the <m>(y_1, y_2, ..., y_n)</m> space.
+        </li>
+        <li>
+          Find the region <m>U \leq u</m>.
+        </li>
+        <li>
+          Find <m>F_U(u) = P(U \leq u)</m> by integrating <m>f(y_1, y_2, ..., y_n)</m> over the region <m>U \leq u</m>.
+        </li>
+        <li>
+          Find the density function <m>f_U(u)</m> by differentiating <m>F_U(u)</m>. Thus, <m>f_U(u) = dF_U(u) / du</m>.
+        </li>
+      </ol>
+    </p>
+  </remark>
 
-  <exercises xml:id="exercises-06-03" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <exercise number="6.1">
+  <example xml:id="exa-6.5">
+    <title>(Example 6.5 in the book)</title>
+    <p>
+      Let <m>U</m> be a uniform random variable on the interval <m>(0, 1)</m>.
+      Find a transformation <m>G(U)</m> such that <m>G(U)</m> possesses an exponential distribution with mean <m>\beta</m>.
+    </p>
+    
+    <solution>
+      <p>
+        If <m>U</m> possesses  a uniform distribution on the interval <m>(0, 1)</m>, then the distribution function of <m>U</m> (see <xref provisional="ex-4.38"></xref>) is given by
+        <me>F_U(u) =
+          \begin{cases}
+            0, \amp u \lt 1,\\
+            u, \amp 0 \leq u \leq 1,\\
+            1, \amp u \gt 1.
+          \end{cases}
+        </me>
+      </p>
+      <p>
+        Let <m>Y</m> denote a random variable that has an exponential distribution with mean <m>\beta</m>.
+        Then (see <xref provisional="section-4.6"></xref>) <m>Y</m> has distribution function
+        <me>
+          F_Y(y) = 
+          \begin{cases}
+            0, \amp y \lt 0,\\
+            1 - e^{-y / \beta}, \amp y \geq 0.
+          \end{cases}
+        </me>
+      </p>
+      <p>
+        Notice that <m>F_Y(y)</m> is strictly increasing on the interval <m>[0, \infty)</m>.
+        Let <m>0 \lt u \lt 1</m> and observe that there is a unique value <m>y</m> such that <m>F_Y(y) = u</m>.
+        Thus, <m>F_Y^{-1}(u), 0 \lt u \lt 1</m>, is well-defined.
+        In this case, <m>F_Y(y) = 1 - e^{-y / \beta} = u</m> if and only if <m>y = -\beta \ln(1 - u) = F_Y^{-1}(u)</m>.
+        Consider the random variable <m>F_Y^{-1}(U) = -\beta \ln(1 - U)</m> and observe that, if <m>y \gt 0</m>,
+        <md>
+          <mrow>P(F_Y^{-1}(U) \leq y) \amp = P[-\beta \ln(1 - U) \leq y]</mrow>
+          <mrow>\amp = P[\ln(1 - U) \geq -y / \beta]</mrow>
+          <mrow>\amp = P(U \leq 1 - e^{-y / \beta})</mrow>
+          <mrow>\amp = 1 - e^{-y / \beta}.</mrow>
+        </md>
+        Also, <m>P[F_Y^{-1}(U) \leq y] = 0</m> if <m>y \leq 0</m>.
+        Thus, <m>F_Y^{-1}(U) = -\beta \ln(1 - U)</m> possesses an exponential distribution with mean <m>\beta</m>, as desired.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Computer simulations are frequently used to evaluate proposed statistical techniques.
+    Typically, these simulations require that we obtain observed values of random variables with a prescribed distribution.
+    As noted in <xref provisional="sec-4.4"></xref>, most computer systems contain a subroutine that provides observed values of a random variable <m>U</m> that has a uniform distribution on the interval <m>(0, 1)</m>.
+    How can the result of <xref ref="exa-6.5"></xref> be used to generate a set of observations from an exponential distribution with mean <m>\beta</m>?
+    Simply use the computer's random number generator to produce values <m>u_1, u_2, ..., u_n</m> from a uniform <m>(0, 1)</m> distribution and then calculate <m>y_i = -\beta \ln(1 - u_i), i = 1, 2, ..., n</m> to obtain values of random variables with the required exponential distribution.
+    As long as a prescribed distribution function <m>F(y)</m> possesses a unique inverse <m>F^{-1}(\cdot)</m>, the preceding technique can be applied.
+  </p>
+
+  <exercises xml:id="exs-6.3" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="ex-6.1" number="6.1">
       <introduction>
         <p>
           Let <m>Y</m> be a random variable with probability density function given by
@@ -16,7 +91,7 @@
               2(1 - y), \amp 0 \leq y \leq 1,\\
               0, \amp \text{elsewhere.}
             \end{cases}
-          </me>
+          </me>.
         </p>
       </introduction>
       
@@ -26,6 +101,42 @@
             Find the density function of <m>U_1 = 2Y - 1</m>.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            <me>
+              F_U(u) = P(U \leq u) = P(2Y - 1 \leq u) = P \left(Y \leq \frac{u + 1}{2} \right)
+            </me>
+            Since <m>0 \leq y \leq 1</m> is the support of <m>f</m>, then the support of <m>f_U</m> will range from
+            <me>
+              \frac{u + 1}{2} = 0 \implies u = -1 \text{ to } \frac{u + 1}{2} = 1 \implies u = 1
+            </me>
+            (<ie/>, the support of <m>f_U</m> is <m>-1 \leq u \leq 1</m>.) Then
+            <md>
+              <mrow>
+                F_U(u) \amp = 
+                \begin{cases}
+                  0, \amp u \lt -1,\\
+                  \int_{t = -1}^{t = (u + 1)/2} (2 - 2t) dt\\
+                  = \left[2t - t^2 \right]_{t = -1}^{t = (u + 1)/2}\\
+                  = \left(2(\frac{u + 1}{2}) - (\frac{u + 1}{2})^2 \right) - \left(2(-1) - (-1)^2 \right)\\
+                  = u + 1 - \frac{u^2 + 2u + 1}{4} + 2 + 1\\
+                  = (u + 4) \cdot \frac{4}{4} - \frac{u^2 + 2u + 1}{4}\\
+                  = \frac{4u + 16}{4} - \frac{u^2 + 2u + 1}{4}\\
+                  = \frac{-u^2 + 2u + 15}{4}\\
+                  = -\frac{1}{4}, \amp -1 \leq u \leq 1,\\
+                  1, \amp 1 \lt u
+                \end{cases}
+              </mrow>
+              <mrow>\implies f_u(u) = \frac{d}{du} \amp = 
+                \begin{cases}
+                  -\frac{1}{2} u + \frac{1}{2}, \amp -1 \leq u \leq 1,\\
+                  0, \amp \text{elsewhere}
+                \end{cases}
+              </mrow>
+            </md>
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -55,16 +166,546 @@
       <task>
         <statement>
           <p>
-            Find <m>E(U_1)</m>, <m>E(U_2)</m>, and <m>E(U_3)</m> by the methods of Chapter 4.
+            Find <m>E(U_1)</m>, <m>E(U_2)</m>, and <m>E(U_3)</m> by the methods of <xref ref="ch-4"></xref>.
           </p>
         </statement>
       </task>
     </exercise>
 
-    <exercise number="6.2">
+    <exercise xml:id="ex-6.2" number="6.2">
+      <introduction>
+        <p>
+          Let <m>Y</m> be a random variable with a density function given by
+          <me>
+            f(y) = 
+            \begin{cases}
+              (3/2)y^2, \amp -1 \leq y \leq 1,\\
+              0, \amp \text{elsewhere.}
+            \end{cases}
+          </me>
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U_1 = 3Y</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U_2 = 3 - Y</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U_3 = Y^2</m>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.3" number="6.3">
+      <introduction>
+        <p>
+          A supplier of kerosene has a weekly demand <m>Y</m> possessing a probability density function given by
+          <me>
+            f(y) = 
+            \begin{cases}
+              y, \amp 0 \leq y \leq 1,\\
+              1, \amp 1 \lt y \leq 1.5,\\
+              0, \amp \text{elsewhere,}
+            \end{cases}
+          </me>
+          with measurements in hundreds of gallons. (This problem was introduced in <xref provisional="ex-4.13">Exercise 4.13</xref>.)
+          The supplier's profit is given by <m>U = 10Y - 4</m>.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the probability density function for <m>U</m>.
+          </p>
+        </statement>
+      </task>
       
+      <task>
+        <statement>
+          <p>
+            Use the answer to part (a) to find <m>E(U)</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Find <m>E(U)</m> by the methods of <xref ref="ch-4"></xref>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.4" number="6.4">
+      <introduction>
+        <p>
+          The amount of flour used per day by a bakery is a random variable <m>Y</m> that has an exponential distribution with mean equal to 4 tons.
+          The cost of the flour is proportional to <m>U = 3Y + 1</m>.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the probability density function for <m>U</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Use the answer in part (a) to find <m>E(U)</m>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.5" number="6.5">
+      <p>The waiting time <m>Y</m> until delivery of a new component for an industrial operation is uniformly distributed over the interval from 1 to 5 days.
+        The cost of this delay is given by <m>U = 2Y^2 + 3</m>.
+        Find the probability density function for <m>U</m>.
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.6" number="6.6">
+      <introduction>
+        <p>
+          The joint distribution of amount of pollutant emitted from smokestack without a cleaning device (<m>Y_1</m>) and a similar smokestack with a cleaning device (<m>Y_2</m>) was given in <xref provisional="ex-5.10"></xref> to be
+          <me>f(y_1, y_2) = 
+            \begin{cases}
+              1, \amp 0 \leq y_1 \leq 2, 0 \leq y_2 \leq 1, 2y_2 \leq y_1,\\
+              0, \amp \text{elsewhere.}
+            \end{cases}
+          </me>
+          The reduction in amount of pollutant due to the cleaning device is given by <m>U = Y_1 - Y_2</m>.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the probability density function for <m>U</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Use the answer in part (a) to find <m>E(U)</m>.
+            Compare your results with those of <xref provisional="ex-5.78">Exercise 5.78(c).</xref>
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.7" number="6.7">
+      <introduction>
+        <p>
+          Suppose that <m>Z</m> has a standard normal distribution.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U = Z^2</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Does <m>U</m> have a gamma distribution?
+            What are the values of <m>\alpha</m> and <m>\beta</m>?
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            What is another name for the distribution of <m>U</m>?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.8" number="6.8">
+      <introduction>
+        <p>
+          Assume that <m>Y</m> has a beta distribution with parameters <m>\alpha</m> and <m>\beta</m>.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function of <m>U = 1 - Y</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Identify the density of <m>U</m> as one of the types we studied in <xref ref="ch-4"></xref>.
+            Be sure to identify any parameter values.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How is <m>E(U)</m> related to <m>E(Y)</m>?
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How is <m>V(U)</m> related to <m>V(Y)</m>?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.9" number="6.9">
+      <introduction>
+        <p>
+          Suppose that a unit of mineral ore contains a proportion <m>Y_1</m> of metal A and a proportion <m>Y_2</m> of metal B.
+          Experience has shown that the joint probability density function of <m>Y_1</m> and <m>Y_2</m> is uniform over the region <m>0 \leq y_1 \leq 1, 0 \leq y_2 \leq 1, 0 \leq y_1 + y_2 \leq 1</m>.
+          Let <m>U = Y_1 + Y_2</m>, the proportion of either metal A or B per unit. Find
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            the probability density function for <m>U</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>E(U)</m> by using the answer to part (a).
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>E(U)</m> by using only the marginal densities of <m>Y_1</m> and <m>Y_2</m>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.10" number="6.10">
+      <introduction>
+        <p>
+          The total time from arrival to completion of service at a fast food outlet, <m>Y_1</m>, and the time spent waiting in line before arriving at the service window, <m>Y_2</m>, were given in <xref provisional="ex-5.15"></xref> with joint density function
+          <me>
+            f(y_1, y_2) = 
+            \begin{cases}
+              e^{-y_1}, \amp 0 \leq y_2 \leq y_1 \lt \infty,\\
+              0, \amp \text{elsewhere.}
+            \end{cases}
+          </me>
+          Another random variable of interest is <m>U = Y_1 - Y_2</m>, the time spent at the service window. Find
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            the probability density function for <m>U</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>E(U)</m> and <m>V(U)</m>. Compare your answers with the results of <xref provisional="ex-5.108"></xref>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.11" number="6.11">
+      <introduction>
+        <p>
+          Suppose that two electronic components in the guidance system for a missile operate independently and that each has a length of life governed by the exponential distribution with mean 1 (with measurements in hundreds of hours). Find the
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            probability density function for the average length of life of the two components.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            mean and variance of this average, using the answer in part (a).
+            Check your answer by computing the mean and variance , using <xref provisional="thm-5.12"></xref>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.12" number="6.12">
+      <introduction>
+        <p>
+          Suppose that <m>Y</m> has a gamma distribution with parameters <m>\alpha</m> and <m>\beta</m> and that <m>c \gt 0</m> is a constant.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Derive the density function of <m>U = cY</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Identify the density of <m>U</m> as one of the types we studied in <xref ref="ch-4"></xref>.
+            Be sure to identify any parameter values.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            The parameters <m>\alpha</m> and <m>\beta</m> of a gamma-distributed random variable are, respectively, <q>shape</q> and <q>scale</q> parameters.
+            How do the scale and shape parameters for <m>U</m> compare to those for <m>Y</m>?
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.13" number="6.13">
+      <p>
+        If <m>Y_1</m> and <m>Y_2</m> are independent exponential random variables, both with mean <m>\beta</m>, find the density function for their sum.
+        (In <xref provisional="ex-5.7"></xref>, we considered two independent exponential random variables, both with mean 1 and determined <m>P(Y_1 + Y_2 \leq 3)</m>.)
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.14" number="6.14">
+      <p>
+        In a process of sintering (heating) two types of copper powder (see <xref provisional="ex-5.152"></xref>), the density function for <m>Y_1</m>, the volume of solid copper in a sample, was given by
+        <me>
+          f_1(y_1) = 
+          \begin{cases}
+            6y_1 (1 - y_1), \amp 0 \leq y_1 \leq 1,\\
+            0, \amp \text{elsewhere.}
+          \end{cases}
+        </me>
+        The density function for <m>Y_2</m>, the proportion of type A crystals among the solid copper, was given by
+        <me>
+          f_2(y_2) = 
+          \begin{cases}
+            3y_2^2, \amp 0 \leq y_2 \leq 1,\\
+            0, \amp \text{elsewhere.}
+          \end{cases}
+        </me>
+        The variable <m>U = Y_1 Y_2</m> gives the proportion of the sample volume due to type A crystals.
+        If <m>Y_1</m> and <m>Y_2</m> are independent, find the probability density function for <m>U</m>.
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.15" number="6.15">
+      <p>
+        Let <m>Y</m> have a distribution function given by
+        <me>
+          F(y) = 
+          \begin{cases}
+            0, \amp y \lt 0,\\
+            1 - e^{-y^2}, \amp y \geq 0.
+          \end{cases}
+        </me>
+        Find a transformation <m>G(U)</m> such that, if <m>U</m> has a uniform distribution on the interval <m>(0, 1)</m>, <m>G(U)</m> has the same distribution as <m>Y</m>.
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.16" number="6.16">
+      <p>
+        In <xref provisional="ex-4.15"></xref>, we determined that
+        <me>
+          f(y) = 
+          \begin{cases}
+            \frac{b}{y^2}, \amp y \geq b,\\
+            0, \amp \text{elsewhere,}
+          \end{cases}
+        </me>
+        is a bona fide probability density function for a random variable, <m>Y</m>.
+        Assuming <m>b</m> is a known constant and <m>U</m> has a uniform distribution on the interval <m>(0, 1)</m>, transform <m>U</m> to obtain a random variable with the same distribution as <m>Y</m>.
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.17" number="6.17">
+      <introduction>
+        <p>
+          A member of the power family of distributions has a distribution function given by
+          <me>
+            F(y) = 
+            \begin{cases}
+              0, \amp y \lt 0,\\
+              (\frac{y}{\theta})^{\alpha}, \amp 0 \leq y \leq \theta,\\
+              1, \amp y \gt \theta,
+            \end{cases}
+          </me>
+          where <m>\alpha, \theta \gt 0</m>.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            For fixed values of <m>\alpha</m> and <m>\theta</m>, find a transformation <m>G(U)</m> such that <m>G(U)</m> has a distribution function of <m>F</m> when <m>U</m> possesses a uniform <m>(0, 1)</m> distribution.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Given that a random sample of size 5 from a uniform distribution on the interval <m>(0, 1)</m> yielded the values .2700, .6901, .1413, .1523, and .3609, use the transformation derived in part (b) to give values associated with a random variable with a power family distribution with <m>\alpha = 2, \theta = 4</m>. 
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.18" number="6.18">
+      <introduction>
+        <p>
+          A member of the Pareto family of distributions (often used in economics to model income distributions) has a distribution function given by
+          <me>
+            F(y) = 
+            \begin{cases}
+              0, \amp y \lt \beta,\\
+              1 - (\frac{\beta}{y})^{\alpha}, \amp y \geq \beta,
+            \end{cases}
+          </me>
+          where <m>\alpha, \beta \gt 0</m>.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Find the density function.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            For fixed values of <m>\beta</m> and <m>\alpha</m>, find a transformation <m>G(U)</m> so that <m>G(U)</m> has a distribution function of <m>F</m> when <m>U</m> has a uniform distribution on the interval <m>(0, 1)</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Given that a random sample of size 5 from a uniform distribution on the interval <m>(0, 1)</m> yielded the values .0058, .2048, .7692, .2475, and .6078, use the transformation derived in part (b) to give values associated with a random variable with a Pareto distribution with <m>\alpha = 2, \beta = 3</m>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.19" number="6.19">
+      <p>
+        Refer to Exercises <xref ref="ex-6.17" text="custom">6.17</xref> and <xref ref="ex-6.18" text="custom">6.18</xref>.
+        If <m>Y</m> possesses a Pareto distribution with parameters <m>\alpha</m> and <m>\beta</m>, prove that <m>X = 1/Y</m> has a power family distribution with parameters <m>\alpha</m> and <m>\theta = \beta^{-1}</m>.
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.20" number="6.20">
+      <introduction>
+        <p>
+          Let the random variable <m>Y</m> possess a uniform distribution on the interval <m>(0, 1)</m>. Derive the
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            distribution of the random variable <m>W = Y^2</m>.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            distribution of the random variable <m>W = \sqrt{Y}</m>.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise xml:id="ex-6.21" number="6.21">
+      <p>
+        Suppose that <m>Y</m> is a random variable that takes on only integer values 1, 2, ...
+        Let <m>F(y)</m> denote the distribution function of this random variable.
+        As discussed in <xref provisional="sec-4.2"></xref>, this distribution is a step function, and the magnitude of the step at each integer value is the probability that <m>Y</m> takes on that value.
+        Let <m>U</m> be a continuous random variable that is uniformly distributed on the interval <m>(0, 1)</m>.
+        Define a variable <m>X</m> such that <m>X = k</m> if and only if <m>F(k - 1) \lt U \leq F(k), k = 1, 2, ...</m>
+        Recall that <m>F(0)</m> because <m>Y</m> takes on only <em>positive</em> integer values.
+        Show that <m>P(X = i) = F(i) - F(i - 1) = P(Y = i), i = 1, 2, ...</m>
+        That is, <m>X</m> has the same distribution as <m>Y</m>.
+        [<em>Hint:</em> Recall <xref provisional="ex-4.5"></xref>.]
+      </p>
+    </exercise>
+
+    <exercise xml:id="ex-6.22" number="6.22">
+      <p>
+        Use the results derived in Exercises <xref provisional="ex-4.6"></xref> and <xref ref="ex-6.21" text="custom">6.21</xref> to describe how to generate values of a geometrically distributed random variable.
+      </p>
     </exercise>
     
   </exercises>
-
 </section>

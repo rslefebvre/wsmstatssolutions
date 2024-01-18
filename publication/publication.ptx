@@ -112,7 +112,7 @@
     <!-- Embedded calculators.  For math, this could be geogebra-classic, geogebra-graphing,
     geogebra-geometry, and geogebra-3d.  For ActiveCode, you can specify a language (python,
     javascript, etc).  -->
-    <calculator model="none" activecode="none" />
+    <calculator model="geogebra-graphing" activecode="none" />
     <!-- Set the base URL of where the online version is hosted to have links in other formats -->
     <!-- <baseurl href="changetomywebsite.org"/> -->
     <!-- Control behavior of online WeBWorK, per type: -->
@@ -128,6 +128,8 @@
     <!-- StatCounter requires both values to be set            -->
     <!-- <analytics google-gst="UA-0123456-1" statcounter-project="0123456"
     statcounter-security="0123456"/> -->
+
+    <!--<exercises tabbed-tasks="divisional" />-->
   </html>
 
   <!-- To use WeBWorK, you need a server.  -->

@@ -6,7 +6,7 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>Ricky Lefebvre</personname>
+      <personname>Anonymous</personname>
       
       <!--
       <department>No department</department>
@@ -14,7 +14,7 @@
       -->
     </author>
     <date>
-      <today/>
+      
     </date>
   </titlepage>
 

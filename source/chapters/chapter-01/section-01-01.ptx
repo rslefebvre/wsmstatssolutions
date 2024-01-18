@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="section-01-01" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-1.1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
 
   <p>
@@ -14,8 +14,8 @@
     Information useful in inferring some characteristic of a population (either existent or conceptual) is purchased in a specified quantity and results in an inference (estimation or decision) with an associated <term>degree of goodness</term><ellipsis></ellipsis> 
   </p>
 
-  <exercises xml:id="exercises-01-01">
-    <exercise number="1.1">
+  <exercises xml:id="exs-1.1">
+    <exercise xml:id="ex-1.1" number="1.1">
       <introduction>
         <p>
           For each of the following situations, identify the population of interest, the inferential objective, and how you might go about collecting a sample.
