@@ -104,34 +104,35 @@
 
         <solution>
           <p>
+            First note that
             <me>
-              F_U(u) = P(U \leq u) = P(2Y - 1 \leq u) = P \left(Y \leq \frac{u + 1}{2} \right)
-            </me>
-            Since <m>0 \leq y \leq 1</m> is the support of <m>f</m>, then the support of <m>f_U</m> will range from
+              F_{U_1}(u_1) = P(U_1 \leq u_1) = P(2Y - 1 \leq u_1) = P \left(Y \leq \frac{u_1 + 1}{2} \right)
+            </me>.
+            Since <m>0 \leq y \leq 1</m> is the support of <m>f</m>, then
             <me>
-              \frac{u + 1}{2} = 0 \implies u = -1 \text{ to } \frac{u + 1}{2} = 1 \implies u = 1
-            </me>
-            (<ie/>, the support of <m>f_U</m> is <m>-1 \leq u \leq 1</m>.) Then
+              0 \leq \frac{u_1 + 1}{2} \leq 1 \Leftrightarrow -1 \leq u_1 \leq 1
+            </me>,
+            (<ie/>, the support of <m>f_{U_1}</m> is <m>-1 \leq u_1 \leq 1</m>).
+            Then, noting we are integrating over the support of <m>Y</m>'s density function and not <m>U_1</m>'s,
             <md>
               <mrow>
-                F_U(u) \amp = 
+                F_{U_1}(u_1) \amp = 
                 \begin{cases}
-                  0, \amp u \lt -1,\\
-                  \int_{t = -1}^{t = (u + 1)/2} (2 - 2t) dt\\
-                  = \left[2t - t^2 \right]_{t = -1}^{t = (u + 1)/2}\\
-                  = \left(2(\frac{u + 1}{2}) - (\frac{u + 1}{2})^2 \right) - \left(2(-1) - (-1)^2 \right)\\
-                  = u + 1 - \frac{u^2 + 2u + 1}{4} + 2 + 1\\
-                  = (u + 4) \cdot \frac{4}{4} - \frac{u^2 + 2u + 1}{4}\\
-                  = \frac{4u + 16}{4} - \frac{u^2 + 2u + 1}{4}\\
-                  = \frac{-u^2 + 2u + 15}{4}\\
-                  = -\frac{1}{4}, \amp -1 \leq u \leq 1,\\
-                  1, \amp 1 \lt u
+                  0, \amp u_1 \lt -1,\\
+                  \int_{y = 0}^{y = (u_1 + 1)/2} f(y) dy\\
+                  \int_{y = 0}^{y = (u_1 + 1)/2} (2 - 2y) dy\\
+                  = \left[2y - y^2 \right]_{y = 0}^{y = (u_1 + 1)/2}\\
+                  = \left(2(\frac{u_1 + 1}{2}) - (\frac{u_1 + 1}{2})^2 \right) - \left(2(0) - (0)^2 \right)\\
+                  = \frac{2u_1 + 2}{2} \cdot \frac{2}{2} - \frac{u_1^2 + 2u_1 + 1}{4}\\
+                  = \frac{4u_1 + 4}{4} - \frac{u_1^2 + 2u_1 + 1}{4}\\
+                  = -\frac{1}{4} u_1^2 + \frac{1}{2} u_1 + \frac{3}{4}, \amp -1 \leq u_1 \leq 1\\
+                  1, \amp 1 \lt u_1
                 \end{cases}
               </mrow>
-              <mrow>\implies f_u(u) = \frac{d}{du} \amp = 
+              <mrow>\implies f_{U_1}(u_1) = \frac{d}{du_1} (F_{U_1}(u_1)) \amp = 
                 \begin{cases}
-                  -\frac{1}{2} u + \frac{1}{2}, \amp -1 \leq u \leq 1,\\
-                  0, \amp \text{elsewhere}
+                  -\frac{1}{2} u_1 + \frac{1}{2}, \amp -1 \leq u_1 \leq 1,\\
+                  0, \amp \text{elsewhere.}
                 \end{cases}
               </mrow>
             </md>
@@ -145,6 +146,41 @@
             Find the density function of <m>U_2 = 1 - 2Y</m>.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            First note that
+            <me>
+              F_{U_2}(u_2) = P(U_2 \leq u_2) = P(1 - 2Y \leq u_2) = P \left(\frac{1 - u_2}{2} \leq Y \right) = 1 - P \left(Y \leq \frac{1 - u_2}{2} \right)
+            </me>.
+            Since <m>0 \leq y \leq 1</m> is the support of <m>f</m>, then
+            <me>
+              0 \leq \frac{1 - u_2}{2} \leq 1 \Leftrightarrow -1 \leq -u_2 \leq 1 \Leftrightarrow 1 \geq u_2 \geq -1,
+            </me>
+            (<ie/>, the support of <m>f_{U_2}</m> is <m>-1 \leq u_2 \leq 1</m>). Then
+            <md>
+              <mrow>
+                F_{U_2}(u_2) \amp = 
+                \begin{cases}
+                  0, \amp u_2 \lt -1,\\
+                  1 - \int_{y = 0}^{y = (1 - u_2)/2} (2 - 2y) dt\\
+                  = \left[2y - y^2 \right]_{y = 0}^{y = (1 - u_2)/2}\\
+                  = 1 - \left[\left(2 \left(\frac{1 - u_2}{2} \right) - \left(\frac{1 - u_2}{2} \right)^2 \right) - \left(2(0) - (0)^2 \right) \right]\\
+                  =  1 - \left[\frac{2 - 2u_2}{2} \cdot \frac{2}{2} - \frac{1 - 2u_2 + u_2^2}{4} \right]\\
+                  = 1 - \left[\frac{4 - 4u_2}{4} - \frac{1 - 2u_2 + u_2^2}{4} \right]\\
+                  = \frac{1}{4} u_2^2 + \frac{1}{2} u_2 + \frac{1}{4}, \amp -1 \leq u_2 \leq 1,\\
+                  1, \amp 1 \lt u_2
+                \end{cases}
+              </mrow>
+              <mrow>\implies f_{U_2}(u_2) = \frac{d}{du_2} (F_{U_2}(u_2)) \amp = 
+                \begin{cases}
+                  \frac{1}{2} u_2 + \frac{1}{2}, \amp -1 \leq u_2 \leq 1,\\
+                  0, \amp \text{elsewhere.}
+                \end{cases}
+              </mrow>
+            </md>
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -153,6 +189,49 @@
             Find the density function of <m>U_3 = Y^2</m>.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            First note that
+            <md>
+              <mrow>
+                F_{U_3}(u_3) \amp = P(U_3 \leq u_3)
+              </mrow>
+              <mrow>
+                \amp = P(Y^2 \leq u_3)
+              </mrow>
+              <mrow>
+                \amp = P \left(-\sqrt{u_3} \leq Y \leq \sqrt{u_3} \right)
+              </mrow>
+              <mrow>
+                \amp = P \left(0 \leq Y \leq \sqrt{u_3} \right),
+              </mrow>
+            </md>
+            where this last equality is true because <m>Y</m> only takes on nonnegative values (<ie/>, <m>0 \leq y \leq 1</m>).
+            Since <m>0 \leq y \leq 1</m> is the support of <m>f</m>, then <m>0^2 \leq y^2 \leq 1^2</m>, or <m>0 \leq y^2 \leq 1</m>.
+            By replacing <m>y^2</m> with <m>u_3</m> in the inequality <m>0 \leq y^2 \leq 1</m>, we get <m>0 \leq u_3 \leq 1</m>, and this will be the support of <m>f_{U_3}</m>. Then
+            <md>
+              <mrow>
+                F_{U_3}(u_3) \amp = 
+                \begin{cases}
+                  0, \amp u_3 \lt 0,\\
+                  P(U_3 \leq u_3) = P(0 \leq Y \leq \sqrt{u_3})\\
+                  = \int_{y = 0}^{y = \sqrt{u_3}} (2 - 2y) dy\\
+                  = \left[2y - y^2 \right]_{y = 0}^{y = \sqrt{u_3}}\\
+                  = \left(2(\sqrt{u_3}) - (\sqrt{u_3})^2 \right) - \left(2(0) - (0)^2 \right) \\
+                  = -u_3 + 2u_3^{1/2}, \amp 0 \leq u_3 \leq 1,\\
+                  1, \amp 1 \lt u_3
+                \end{cases}
+              </mrow>
+              <mrow>\implies f_{U_3}(u_3) = \frac{d}{du_3} (F_{U_3}(u_3)) \amp = 
+                \begin{cases}
+                  -1 + u_3^{-1/2}, \amp 0 \leq u_3 \leq 1,\\
+                  0, \amp \text{elsewhere.}
+                \end{cases}
+              </mrow>
+            </md>
+          </p>
+        </solution>
       </task>
 
       <task>
