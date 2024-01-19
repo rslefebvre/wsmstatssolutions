@@ -263,45 +263,111 @@ f(y) =
 <div class="para" id="ex-6.1-2-1-1">Find the density function of <span class="process-math">\(U_1 = 2Y - 1\text{.}\)</span>
 </div>
 <div class="solutions"><details id="ex-6.1-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6.1-2-2-1">
+<div class="para">First note that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F_U(u) = P(U \leq u) = P(2Y - 1 \leq u) = P \left(Y \leq \frac{u + 1}{2} \right)
+F_{U_1}(u_1) = P(U_1 \leq u_1) = P(2Y - 1 \leq u_1) = P \left(Y \leq \frac{u_1 + 1}{2} \right)\text{.}
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(0 \leq y \leq 1\)</span> is the support of <span class="process-math">\(f\text{,}\)</span> then the support of <span class="process-math">\(f_U\)</span> will range from</div>
+<div class="para">Since <span class="process-math">\(0 \leq y \leq 1\)</span> is the support of <span class="process-math">\(f\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{u + 1}{2} = 0 \implies u = -1 \text{ to } \frac{u + 1}{2} = 1 \implies u = 1
+0 \leq \frac{u_1 + 1}{2} \leq 1 \Leftrightarrow -1 \leq u_1 \leq 1\text{,}
 \end{equation*}
 </div>
-<div class="para">(i.e., the support of <span class="process-math">\(f_U\)</span> is <span class="process-math">\(-1 \leq u \leq 1\text{.}\)</span>) Then</div>
-<div class="displaymath process-math" id="ex-6.1-2-2-1-9">
+<div class="para">(i.e., the support of <span class="process-math">\(f_{U_1}\)</span> is <span class="process-math">\(-1 \leq u_1 \leq 1\)</span>). Then, noting we are integrating over the support of <span class="process-math">\(Y\)</span>’s density function and not <span class="process-math">\(U_1\)</span>’s,</div>
+<div class="displaymath process-math" id="ex-6.1-2-2-1-10">
 \begin{align*}
-F_U(u) \amp = 
+F_{U_1}(u_1) \amp = 
 \begin{cases}
-0, \amp u \lt -1,\\
-\int_{t = -1}^{t = (u + 1)/2} (2 - 2t) dt\\
-= \left[2t - t^2 \right]_{t = -1}^{t = (u + 1)/2}\\
-= \left(2(\frac{u + 1}{2}) - (\frac{u + 1}{2})^2 \right) - \left(2(-1) - (-1)^2 \right)\\
-= u + 1 - \frac{u^2 + 2u + 1}{4} + 2 + 1\\
-= (u + 4) \cdot \frac{4}{4} - \frac{u^2 + 2u + 1}{4}\\
-= \frac{4u + 16}{4} - \frac{u^2 + 2u + 1}{4}\\
-= \frac{-u^2 + 2u + 15}{4}\\
-= -\frac{1}{4}, \amp -1 \leq u \leq 1,\\
-1, \amp 1 \lt u
+0, \amp u_1 \lt -1,\\
+\int_{y = 0}^{y = (u_1 + 1)/2} f(y) dy\\
+\int_{y = 0}^{y = (u_1 + 1)/2} (2 - 2y) dy\\
+= \left[2y - y^2 \right]_{y = 0}^{y = (u_1 + 1)/2}\\
+= \left(2(\frac{u_1 + 1}{2}) - (\frac{u_1 + 1}{2})^2 \right) - \left(2(0) - (0)^2 \right)\\
+= \frac{2u_1 + 2}{2} \cdot \frac{2}{2} - \frac{u_1^2 + 2u_1 + 1}{4}\\
+= \frac{4u_1 + 4}{4} - \frac{u_1^2 + 2u_1 + 1}{4}\\
+= -\frac{1}{4} u_1^2 + \frac{1}{2} u_1 + \frac{3}{4}, \amp -1 \leq u_1 \leq 1\\
+1, \amp 1 \lt u_1
 \end{cases}\\
-\implies f_u(u) = \frac{d}{du} \amp = 
+\implies f_{U_1}(u_1) = \frac{d}{du_1} (F_{U_1}(u_1)) \amp = 
 \begin{cases}
--\frac{1}{2} u + \frac{1}{2}, \amp -1 \leq u \leq 1,\\
-0, \amp \text{elsewhere}
+-\frac{1}{2} u_1 + \frac{1}{2}, \amp -1 \leq u_1 \leq 1,\\
+0, \amp \text{elsewhere.}
 \end{cases}
 \end{align*}
 </div>
 </div></div></details></div></article><article class="task exercise-like" id="ex-6.1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="ex-6.1-3-1-1">Find the density function of <span class="process-math">\(U_2 = 1 - 2Y\text{.}\)</span>
-</div></article><article class="task exercise-like" id="ex-6.1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+</div>
+<div class="solutions"><details id="ex-6.1-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6.1-3-2-1">
+<div class="para">First note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_{U_2}(u_2) = P(U_2 \leq u_2) = P(1 - 2Y \leq u_2) = P \left(\frac{1 - u_2}{2} \leq Y \right) = 1 - P \left(Y \leq \frac{1 - u_2}{2} \right)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(0 \leq y \leq 1\)</span> is the support of <span class="process-math">\(f\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \leq \frac{1 - u_2}{2} \leq 1 \Leftrightarrow -1 \leq -u_2 \leq 1 \Leftrightarrow 1 \geq u_2 \geq -1,
+\end{equation*}
+</div>
+<div class="para">(i.e., the support of <span class="process-math">\(f_{U_2}\)</span> is <span class="process-math">\(-1 \leq u_2 \leq 1\)</span>). Then</div>
+<div class="displaymath process-math" id="ex-6.1-3-2-1-8">
+\begin{align*}
+F_{U_2}(u_2) \amp = 
+\begin{cases}
+0, \amp u_2 \lt -1,\\
+1 - \int_{y = 0}^{y = (1 - u_2)/2} (2 - 2y) dt\\
+= \left[2y - y^2 \right]_{y = 0}^{y = (1 - u_2)/2}\\
+= 1 - \left[\left(2 \left(\frac{1 - u_2}{2} \right) - \left(\frac{1 - u_2}{2} \right)^2 \right) - \left(2(0) - (0)^2 \right) \right]\\
+=  1 - \left[\frac{2 - 2u_2}{2} \cdot \frac{2}{2} - \frac{1 - 2u_2 + u_2^2}{4} \right]\\
+= 1 - \left[\frac{4 - 4u_2}{4} - \frac{1 - 2u_2 + u_2^2}{4} \right]\\
+= \frac{1}{4} u_2^2 + \frac{1}{2} u_2 + \frac{1}{4}, \amp -1 \leq u_2 \leq 1,\\
+1, \amp 1 \lt u_2
+\end{cases}\\
+\implies f_{U_2}(u_2) = \frac{d}{du_2} (F_{U_2}(u_2)) \amp = 
+\begin{cases}
+\frac{1}{2} u_2 + \frac{1}{2}, \amp -1 \leq u_2 \leq 1,\\
+0, \amp \text{elsewhere.}
+\end{cases}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="task exercise-like" id="ex-6.1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="ex-6.1-4-1-1">Find the density function of <span class="process-math">\(U_3 = Y^2\text{.}\)</span>
-</div></article><article class="task exercise-like" id="ex-6.1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div>
+<div class="solutions"><details id="ex-6.1-4-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6.1-4-2-1">
+<div class="para">First note that</div>
+<div class="displaymath process-math" id="ex-6.1-4-2-1-1">
+\begin{align*}
+F_{U_3}(u_3) \amp = P(U_3 \leq u_3)\\
+\amp = P(Y^2 \leq u_3)\\
+\amp = P \left(-\sqrt{u_3} \leq Y \leq \sqrt{u_3} \right)\\
+\amp = P \left(0 \leq Y \leq \sqrt{u_3} \right),
+\end{align*}
+</div>
+<div class="para">where this last equality is true because <span class="process-math">\(Y\)</span> only takes on nonnegative values (i.e., <span class="process-math">\(0 \leq y \leq 1\)</span>). Since <span class="process-math">\(0 \leq y \leq 1\)</span> is the support of <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(0^2 \leq y^2 \leq 1^2\text{,}\)</span> or <span class="process-math">\(0 \leq y^2 \leq 1\text{.}\)</span> By replacing <span class="process-math">\(y^2\)</span> with <span class="process-math">\(u_3\)</span> in the inequality <span class="process-math">\(0 \leq y^2 \leq 1\text{,}\)</span> we get <span class="process-math">\(0 \leq u_3 \leq 1\text{,}\)</span> and this will be the support of <span class="process-math">\(f_{U_3}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ex-6.1-4-2-1-14">
+\begin{align*}
+F_{U_3}(u_3) \amp = 
+\begin{cases}
+0, \amp u_3 \lt 0,\\
+P(U_3 \leq u_3) = P(0 \leq Y \leq \sqrt{u_3})\\
+= \int_{y = 0}^{y = \sqrt{u_3}} (2 - 2y) dy\\
+= \left[2y - y^2 \right]_{y = 0}^{y = \sqrt{u_3}}\\
+= \left(2(\sqrt{u_3}) - (\sqrt{u_3})^2 \right) - \left(2(0) - (0)^2 \right) \\
+= -u_3 + 2u_3^{1/2}, \amp 0 \leq u_3 \leq 1,\\
+1, \amp 1 \lt u_3
+\end{cases}\\
+\implies f_{U_3}(u_3) = \frac{d}{du_3} (F_{U_3}(u_3)) \amp = 
+\begin{cases}
+-1 + u_3^{-1/2}, \amp 0 \leq u_3 \leq 1,\\
+0, \amp \text{elsewhere.}
+\end{cases}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="task exercise-like" id="ex-6.1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="ex-6.1-5-1-1">Find <span class="process-math">\(E(U_1)\text{,}\)</span> <span class="process-math">\(E(U_2)\text{,}\)</span> and <span class="process-math">\(E(U_3)\)</span> by using the derived density functions for these random variables.</div></article><article class="task exercise-like" id="ex-6.1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="ex-6.1-6-1-1">Find <span class="process-math">\(E(U_1)\text{,}\)</span> <span class="process-math">\(E(U_2)\text{,}\)</span> and <span class="process-math">\(E(U_3)\)</span> by the methods of <a href="ch-4.html" class="internal" title="Chapter 4: Continuous Variables and Their Probability Distributions">Chapter 4</a>.</div></article></article><article class="exercise exercise-like" id="ex-6.2"><h4 class="heading"><span class="codenumber">6.2<span class="period">.</span></span></h4>
 <div class="introduction" id="ex-6.2-1"><div class="para logical" id="ex-6.2-1-1">
