@@ -10,6 +10,6 @@
   -->
 
   <!-- include sections -->
-  <xi:include href="./section-04-01.ptx" />
+  <xi:include href="./sec-4-1.ptx" />
 
 </chapter>

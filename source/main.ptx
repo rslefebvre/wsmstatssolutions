@@ -16,12 +16,12 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./chapters/chapter-01/chapter-01.ptx" />
-    <xi:include href="./chapters/chapter-02/chapter-02.ptx" />
-    <xi:include href="./chapters/chapter-03/chapter-03.ptx" />
-    <xi:include href="./chapters/chapter-04/chapter-04.ptx" />
-    <xi:include href="./chapters/chapter-05/chapter-05.ptx" />
-    <xi:include href="./chapters/chapter-06/chapter-06.ptx" />
+    <xi:include href="./chapters/ch-1/ch-1.ptx" />
+    <xi:include href="./chapters/ch-2/ch-2.ptx" />
+    <xi:include href="./chapters/ch-3/ch-3.ptx" />
+    <xi:include href="./chapters/ch-4/ch-4.ptx" />
+    <xi:include href="./chapters/ch-5/ch-5.ptx" />
+    <xi:include href="./chapters/ch-6/ch-6.ptx" />
 
 
     <!-- Include backmatter -->

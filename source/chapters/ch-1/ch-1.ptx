@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>What Is Statistics?</title>
+
+  <!--
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+  -->
+
+  <!-- include sections -->
+  <xi:include href="./sec-1-1.ptx" />
+  <xi:include href="./sec-1-2.ptx" />
+  <xi:include href="./sec-1-3.ptx" />
+  <xi:include href="./sec-1-4.ptx" />
+  <xi:include href="./sec-1-5.ptx" />
+  <xi:include href="./sec-1-6.ptx" />
+  <xi:include href="./sec-1-SE.ptx" />
+
+</chapter>
