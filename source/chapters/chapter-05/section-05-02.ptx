@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-5.2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-5-2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Bivariate and Multivariate Probability Distributions</title>
 
   <p> Text of section. </p>
 
-  <exercises xml:id="exs-5.2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <exercise xml:id="ex-5.1" number="5.1">
+  <exercises xml:id="exs-5-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="ex-5-1" number="5.1">
       <introduction>
         Contracts for two construction jobs are randomly assigned to one or more of three firms, A, B, and C.
         Let <m>Y_1</m> denote the number of contracts assigned to firm A and <m>Y_2</m> the number of contracts assigned to firm B.
