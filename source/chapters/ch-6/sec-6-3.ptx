@@ -652,6 +652,42 @@
             Find the probability density function for <m>U</m>.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            First note that
+            <me>
+              f(y) = \begin{cases}
+                \frac{1}{4} e^{-y / 4}, \amp y \gt 0,\\
+                0, \amp \text{elsewhere}
+              \end{cases}
+            </me>
+            and
+            <me>
+              F_U(u) = P(U \leq u) = P(3Y + 1 \leq u) = P \left(Y \leq \frac{u - 1}{3} \right)
+            </me>,
+            where <m> 0 \lt \frac{u - 1}{3} \Leftrightarrow 1 \lt u </m>. Then
+            <md>
+              <mrow>
+                F_U(u) \amp = 
+                \begin{cases}
+                  0, \amp u \leq 1,\\
+                  \int_{y = 0}^{y = (u - 1)/3} \frac{1}{4} e^{-y / 4} dy\\
+                  = -e^{-y / 4} \biggr|_{y = 0}^{y = (u - 1)/3}\\
+                  = -e^{-[(u - 1)/3] / 4} + e^{-(0) / 4}\\
+                  = 1 - e^{(1 - u) / 12}, \amp 1 \lt u
+                \end{cases}
+              </mrow>
+              <mrow>
+                \implies f_U(u) \amp = 
+                \begin{cases}
+                  0, \amp u \leq 1,\\
+                  \frac{1}{12} e^{(1 - u) / 12}, \amp 1 \lt u.
+                \end{cases}
+              </mrow>
+            </md>
+          </p>
+        </solution>
       </task>
 
       <task>
@@ -660,6 +696,26 @@
             Use the answer in part (a) to find <m>E(U)</m>.
           </p>
         </statement>
+
+        <solution>
+          <p>
+            <md>
+              <mrow>
+                E(U) \amp = \int_{u = 1}^{u = \infty} u \cdot \frac{1}{12} e^{(1 - u) / 12} du
+              </mrow>
+              <mrow>
+                \amp = \int_{v = 0}^{u = \infty} \frac{(v + 1)e^{-v / 12}}{12} dv \s\s\s (\text{letting $v = u - 1$ so $dv = du$})
+              </mrow>
+              <mrow>
+                \amp = 12 \int_{v = 0}^{v = \infty} \frac{v^{2 - 1} e^{-v / 12}}{12^2 \Gamma(2)} dv + \int_{v = 0}^{v = \infty} \frac{1}{12} e^{-v / 12} dv
+              </mrow>
+              <mrow>
+                \amp = 12 \cdot 1 + 1 = 13
+              </mrow>
+            </md>
+            (In the second-to-last line above, the first integrand was a gamma density with <m>\alpha = 2</m> and <m>\beta = 12</m>, and the second integrand was an exponential density with <m>\beta = 12</m>.)
+          </p>
+        </solution>
       </task>
     </exercise>
 
@@ -668,6 +724,59 @@
         The cost of this delay is given by <m>U = 2Y^2 + 3</m>.
         Find the probability density function for <m>U</m>.
       </p>
+
+      <solution>
+        <p>
+          First note that
+          <me>
+            f(y) = 
+            \begin{cases}
+              \frac{1}{5 - 1} = \frac{1}{4}, \amp 1 \leq y \leq 5,\\
+              0, \amp \text{elsewhere}
+            \end{cases}
+          </me>
+          and
+          <md>
+            <mrow>
+              F_U(u) \amp = P(U \leq u)
+            </mrow>
+            <mrow>
+              \amp = P(2Y^2 + 3 \leq u)
+            </mrow>
+            <mrow>
+              \amp = P \left(Y^2 \leq \frac{u - 3}{2} \right)
+            </mrow>
+            <mrow>
+              \amp = P \left(-\sqrt{\frac{u - 3}{2}} \leq Y \leq \sqrt{\frac{u - 3}{2}} \right)
+            </mrow>
+            <mrow>
+              \amp = P \left(1 \leq Y \leq \sqrt{\frac{u - 3}{2}} \right)
+            </mrow>
+          </md>,
+          where this last equality is because <m>Y</m> only takes on values in the range of <m>1 \leq Y \leq 5</m>.
+          By seeing that <m>1 = \sqrt{\frac{u - 3}{2}} \Leftrightarrow u = 5</m> and <m>5 = \sqrt{\frac{u - 3}{2}} \Leftrightarrow u = 53</m>, we know that the support of <m>f_U</m> will be <m>5 \leq u \leq 53</m>. Then
+          <md>
+            <mrow>
+              F_U(u) \amp = 
+              \begin{cases}
+                0, \amp u \lt 5,\\
+                \int_{y = 1}^{y = \sqrt{(u - 3) / 2}} \frac{1}{4} dy\\
+                = \frac{1}{4} y \biggr|_{y = 1}^{y = \sqrt{(u - 3) / 2}}\\
+                = \frac{1}{4} \left(\sqrt{\frac{u - 3}{2}} \right) - \frac{1}{4} (1)\\
+                = \frac{1}{4} \left(\frac{u - 3}{2} \right)^{1/2} - \frac{1}{4}, \amp 5 \leq u \leq 53,\\
+                1, \amp 53 \lt u
+              \end{cases}
+            </mrow>
+            <mrow>
+              \implies f_U(u) \amp = 
+              \begin{cases}
+                \frac{1}{16} \left(\frac{u - 3}{2} \right)^{-1/2}, \amp 5 \leq u \leq 53,\\
+                0, \amp \text{elsewhere.}
+              \end{cases}
+            </mrow>
+          </md>
+        </p>
+      </solution>
     </exercise>
 
     <exercise xml:id="ex-6-6" number="6.6">
@@ -689,6 +798,61 @@
           <p>
             Find the probability density function for <m>U</m>.
           </p>
+          
+          <solution>
+            <p>
+              First note that <m>P(U \leq u) = P(Y_1 - Y_2 \leq u) = P(Y_1 \leq Y_2 + u)</m>.
+              The image below shows a red triangle, which is the support of <m>f</m>, and a green triangle, which is the intersection of the support and the region described by <m>y_1 \leq y_2 + u</m>.
+              The green line between the two labeled points is a segment of the line <m>y_1 = y_2 + u</m>.
+              The labeled points are found by 1) solving <m>y_1 = y_2 + u</m> when <m>y_2 = 0</m> to get <m>y_1 = u</m>, thus the point <m>(u, 0)</m>, and 2) by rearranging <m>y_1 = y_2 + u</m> to <m>y_2 = y_1 - u</m> and solving <m>y_1 - u = \frac{1}{2} y_1</m> for <m>y_1 = 2u</m>, and plugging that into either line equation to get <m>y_2 = \frac{1}{2} (2u) = (2u) - u = u</m>, thus the point <m>(2u, u)</m>.
+              It is important to note that this is the shape of the green triangle region only when <m>0 \leq u \leq 1</m>, because if <m>u = 0</m> then <m>(u, 0) = (2u, u) = (0, 0)</m> and the region degenerates, and when <m>u = 1</m> we have <m>(2u, u) = (2, 1)</m> and the shape of the region changes because the support of <m>f</m> has <m>y_1</m> only in the range <m>0 \leq y_1 \leq 2</m>.
+              <image source="source/images/ch-6/ex-6-6-RI1.png">
+                <description>Image description.</description>
+              </image> 
+            </p>
+  
+            <p>
+              When the green triangle region changes shape because <m>1 \lt u</m>, it changes into a shape of the form in the following image.
+              This time, we have a different point <m>(2, 2 - u)</m>, which is found by solving <m>y_1 = y_2 + u</m> when <m>y_1 = 2</m> for <m>y_2 = 2 - u</m>.
+              This region shape holds when <m>1 \leq u \leq 2</m>, because <m>u = 1</m> is the point at which the region changed shape, and when <m>u = 2</m>, we get <m>(u, 0) = (2, 2 - u) = (2, 0)</m> and the region covers the entire support of <m>f</m>.
+              Thus, the support of <m>f_U</m> will be <m>0 \leq u \leq 2</m>, with different parts for <m>0 \leq u \leq 1</m> and <m>1 \leq u \leq 2</m>.
+              <image source="source/images/ch-6/ex-6-6-RI2.png" width="%">
+                <description>Image Description</description>
+              </image>
+              Then
+              <md>
+                <mrow>
+                  F_U(u) \amp = 
+                  \begin{cases}
+                    0, \amp u \lt 0,\\
+                    \int_{y_2 = 0}^{y_2 = u} \int_{y_1 = 2y_2}^{y_1 = y_2 + u} 1 dy_1 dy_2\\
+                    = \int_{y_2 = 0}^{y_2 = u} y_1 \biggr|_{y_1 = 2y_2}^{y_1 = y_2 + u} dy_2\\
+                    = \int_{y_2 = 0}^{y_2 = u} \left[(y_2 + u) - (2y_2) \right] dy_2\\
+                    = \int_{y_2 = 0}^{y_2 = u} (u - y_2) dy_2\\
+                    = \left[uy_2 - \frac{1}{2} y_2^2 \right]_{y_2 = 0}^{y_2 = u}\\
+                    = \left(u(u) - \frac{1}{2} (u)^2 \right) - \left(u(0) - \frac{1}{2} (0)^2 \right)\\
+                    = \frac{1}{2} u^2, \amp 0 \leq u \leq 1,\\
+                    1 - \int_{y_1 = u}^{y_1 = 2} \int_{y_2 = 0}^{y_2 = y_1 - u} 1 dy_2 dy_1\\
+                    = 1 - \int_{y_1 = u}^{y_1 = 2} y_2 \biggr|_{y_2 = 0}^{y_2 = y_1 - u} dy_1\\
+                    = 1 - \int_{y_1 = u}^{y_1 = 2} \left[(y_1 - u) - (0) \right] dy_1\\
+                    = 1 - \int_{y_1 = u}^{y_1 = 2} (y_1 - u) dy_1\\
+                    = 1 - \left[\frac{1}{2} y_1^2 - uy_1 \right]_{y_1 = u}^{y_1 = 2}\\
+                    = 1 - \left[\left(\frac{1}{2} (2)^2 - u(2) \right) - \left(\frac{1}{2} (u)^2 - u(u) \right) \right]\\
+                    = -\frac{1}{2} u^2 + 2u - 1, \amp 1 \leq u \leq 2,\\
+                    1, \amp 2 \lt u
+                  \end{cases}
+                </mrow>
+                <mrow>
+                  \implies f_U(u) \amp = 
+                  \begin{cases}
+                    u, \amp 0 \leq u \leq 1,\\
+                    -u + 2, \amp 1 \leq u \leq 2,\\
+                    0, \amp \text{elsewhere.}
+                  \end{cases}
+                </mrow>
+              </md>
+            </p>
+          </solution>
         </statement>
       </task>
 
@@ -699,6 +863,26 @@
             Compare your results with those of <xref provisional="ex-5-78">Exercise 5.78(c).</xref>
           </p>
         </statement>
+
+        <solution>
+          <p>
+            <md>
+              <mrow>
+                E(U) \amp = \int_{u = 0}^{u = 1} u \cdot u du + \int_{u = 1}^{u = 2} u \cdot (-u + 2) du
+              </mrow>
+              <mrow>
+                \amp = \left[\frac{1}{3} u^3 \right]_{u = 0}^{u = 1} + \left[-\frac{1}{3} u^3 + u^2 \right]_{u = 1}^{u = 2}
+              </mrow>
+              <mrow>
+                \amp = \left[\frac{1}{3} (1)^3 - \frac{1}{3} (0)^3 \right] + \left[\left(-\frac{1}{3} (2)^3 + (2)^2 \right) - \left(-\frac{1}{3} (1)^3 + (1)^2 \right) \right]\\
+              </mrow>
+              <mrow>
+                \amp = \frac{1}{3} - \frac{8}{3} + 4 + \frac{1}{3} - 1 = 1
+              </mrow>
+            </md>
+            This is precisely what was found in <xref provisional="ex-5-78"/>.
+          </p>
+        </solution>
       </task>
     </exercise>
 
