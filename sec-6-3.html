@@ -120,7 +120,7 @@ var ggbApp = new GGBApplet({"appName": "graphing",
     "autoHeight": true,
     "disableAutoScale": false},
 true);
-</script></span><span class="treebuttons"><a class="previous-button button" href="sec-6-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-6.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-6-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</script></span><span class="treebuttons"><a class="previous-button button" href="sec-6-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-6.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-6-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R} \newcommand{\s}{\hspace{2pt}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -625,11 +625,98 @@ E(Y) \amp = \int_{y = 0}^{y = 1} y \cdot y dy + \int_{y = 1}^{y = 3/2} y \cdot 1
 </div></div>
 <article class="task exercise-like" id="ex-6-4-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="ex-6-4-2-1-1">Find the probability density function for <span class="process-math">\(U\text{.}\)</span>
-</div></article><article class="task exercise-like" id="ex-6-4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div>
+<div class="solutions"><details id="ex-6-4-2-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6-4-2-2-1">
+<div class="para">First note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(y) = \begin{cases}
+\frac{1}{4} e^{-y / 4}, \amp y \gt 0,\\
+0, \amp \text{elsewhere}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_U(u) = P(U \leq u) = P(3Y + 1 \leq u) = P \left(Y \leq \frac{u - 1}{3} \right)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(0 \lt \frac{u - 1}{3} \Leftrightarrow 1 \lt u \text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ex-6-4-2-2-1-4">
+\begin{align*}
+F_U(u) \amp = 
+\begin{cases}
+0, \amp u \leq 1,\\
+\int_{y = 0}^{y = (u - 1)/3} \frac{1}{4} e^{-y / 4} dy\\
+= -e^{-y / 4} \biggr|_{y = 0}^{y = (u - 1)/3}\\
+= -e^{-[(u - 1)/3] / 4} + e^{-(0) / 4}\\
+= 1 - e^{(1 - u) / 12}, \amp 1 \lt u
+\end{cases}\\
+\implies f_U(u) \amp = 
+\begin{cases}
+0, \amp u \leq 1,\\
+\frac{1}{12} e^{(1 - u) / 12}, \amp 1 \lt u.
+\end{cases}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="task exercise-like" id="ex-6-4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="ex-6-4-3-1-1">Use the answer in part (a) to find <span class="process-math">\(E(U)\text{.}\)</span>
-</div></article></article><article class="exercise exercise-like" id="ex-6-5"><h4 class="heading"><span class="codenumber">6.5<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="ex-6-4-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6-4-3-2-1">
+<div class="displaymath process-math" id="ex-6-4-3-2-1-1">
+\begin{align*}
+E(U) \amp = \int_{u = 1}^{u = \infty} u \cdot \frac{1}{12} e^{(1 - u) / 12} du\\
+\amp = \int_{v = 0}^{u = \infty} \frac{(v + 1)e^{-v / 12}}{12} dv \s\s\s (\text{letting $v = u - 1$ so $dv = du$})\\
+\amp = 12 \int_{v = 0}^{v = \infty} \frac{v^{2 - 1} e^{-v / 12}}{12^2 \Gamma(2)} dv + \int_{v = 0}^{v = \infty} \frac{1}{12} e^{-v / 12} dv\\
+\amp = 12 \cdot 1 + 1 = 13
+\end{align*}
+</div>
+<div class="para">(In the second-to-last line above, the first integrand was a gamma density with <span class="process-math">\(\alpha = 2\)</span> and <span class="process-math">\(\beta = 12\text{,}\)</span> and the second integrand was an exponential density with <span class="process-math">\(\beta = 12\text{.}\)</span>)</div>
+</div></div></details></div></article></article><article class="exercise exercise-like" id="ex-6-5"><h4 class="heading"><span class="codenumber">6.5<span class="period">.</span></span></h4>
 <div class="para" id="ex-6-5-1">The waiting time <span class="process-math">\(Y\)</span> until delivery of a new component for an industrial operation is uniformly distributed over the interval from 1 to 5 days. The cost of this delay is given by <span class="process-math">\(U = 2Y^2 + 3\text{.}\)</span> Find the probability density function for <span class="process-math">\(U\text{.}\)</span>
-</div></article><article class="exercise exercise-like" id="ex-6-6"><h4 class="heading"><span class="codenumber">6.6<span class="period">.</span></span></h4>
+</div>
+<details id="ex-6-5-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6-5-2-1">
+<div class="para">First note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(y) = 
+\begin{cases}
+\frac{1}{5 - 1} = \frac{1}{4}, \amp 1 \leq y \leq 5,\\
+0, \amp \text{elsewhere}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="ex-6-5-2-1-2">
+\begin{align*}
+F_U(u) \amp = P(U \leq u)\\
+\amp = P(2Y^2 + 3 \leq u)\\
+\amp = P \left(Y^2 \leq \frac{u - 3}{2} \right)\\
+\amp = P \left(-\sqrt{\frac{u - 3}{2}} \leq Y \leq \sqrt{\frac{u - 3}{2}} \right)\\
+\amp = P \left(1 \leq Y \leq \sqrt{\frac{u - 3}{2}} \right)\text{,}
+\end{align*}
+</div>
+<div class="para">where this last equality is because <span class="process-math">\(Y\)</span> only takes on values in the range of <span class="process-math">\(1 \leq Y \leq 5\text{.}\)</span> By seeing that <span class="process-math">\(1 = \sqrt{\frac{u - 3}{2}} \Leftrightarrow u = 5\)</span> and <span class="process-math">\(5 = \sqrt{\frac{u - 3}{2}} \Leftrightarrow u = 53\text{,}\)</span> we know that the support of <span class="process-math">\(f_U\)</span> will be <span class="process-math">\(5 \leq u \leq 53\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="ex-6-5-2-1-9">
+\begin{align*}
+F_U(u) \amp = 
+\begin{cases}
+0, \amp u \lt 5,\\
+\int_{y = 1}^{y = \sqrt{(u - 3) / 2}} \frac{1}{4} dy\\
+= \frac{1}{4} y \biggr|_{y = 1}^{y = \sqrt{(u - 3) / 2}}\\
+= \frac{1}{4} \left(\sqrt{\frac{u - 3}{2}} \right) - \frac{1}{4} (1)\\
+= \frac{1}{4} \left(\frac{u - 3}{2} \right)^{1/2} - \frac{1}{4}, \amp 5 \leq u \leq 53,\\
+1, \amp 53 \lt u
+\end{cases}\\
+\implies f_U(u) \amp = 
+\begin{cases}
+\frac{1}{16} \left(\frac{u - 3}{2} \right)^{-1/2}, \amp 5 \leq u \leq 53,\\
+0, \amp \text{elsewhere.}
+\end{cases}
+\end{align*}
+</div>
+</div></div></details></article><article class="exercise exercise-like" id="ex-6-6"><h4 class="heading"><span class="codenumber">6.6<span class="period">.</span></span></h4>
 <div class="introduction" id="ex-6-6-1"><div class="para logical" id="ex-6-6-1-1">
 <div class="para">The joint distribution of amount of pollutant emitted from smokestack without a cleaning device (<span class="process-math">\(Y_1\)</span>) and a similar smokestack with a cleaning device (<span class="process-math">\(Y_2\)</span>) was given in <code class="code-inline tex2jax_ignore">[provisional cross-reference: ex-5-10]</code> to be</div>
 <div class="displaymath process-math" data-contains-math-knowls="">
@@ -646,9 +733,54 @@ f(y_1, y_2) =
 </div></div>
 <article class="task exercise-like" id="ex-6-6-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="ex-6-6-2-1-1">Find the probability density function for <span class="process-math">\(U\text{.}\)</span>
-</div></article><article class="task exercise-like" id="ex-6-6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div> <details id="ex-6-6-2-1-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="ex-6-6-2-1-2-1">First note that <span class="process-math">\(P(U \leq u) = P(Y_1 - Y_2 \leq u) = P(Y_1 \leq Y_2 + u)\text{.}\)</span> The image below shows a red triangle, which is the support of <span class="process-math">\(f\text{,}\)</span> and a green triangle, which is the intersection of the support and the region described by <span class="process-math">\(y_1 \leq y_2 + u\text{.}\)</span> The green line between the two labeled points is a segment of the line <span class="process-math">\(y_1 = y_2 + u\text{.}\)</span> The labeled points are found by 1) solving <span class="process-math">\(y_1 = y_2 + u\)</span> when <span class="process-math">\(y_2 = 0\)</span> to get <span class="process-math">\(y_1 = u\text{,}\)</span> thus the point <span class="process-math">\((u, 0)\text{,}\)</span> and 2) by rearranging <span class="process-math">\(y_1 = y_2 + u\)</span> to <span class="process-math">\(y_2 = y_1 - u\)</span> and solving <span class="process-math">\(y_1 - u = \frac{1}{2} y_1\)</span> for <span class="process-math">\(y_1 = 2u\text{,}\)</span> and plugging that into either line equation to get <span class="process-math">\(y_2 = \frac{1}{2} (2u) = (2u) - u = u\text{,}\)</span> thus the point <span class="process-math">\((2u, u)\text{.}\)</span> It is important to note that this is the shape of the green triangle region only when <span class="process-math">\(0 \leq u \leq 1\text{,}\)</span> because if <span class="process-math">\(u = 0\)</span> then <span class="process-math">\((u, 0) = (2u, u) = (0, 0)\)</span> and the region degenerates, and when <span class="process-math">\(u = 1\)</span> we have <span class="process-math">\((2u, u) = (2, 1)\)</span> and the shape of the region changes because the support of <span class="process-math">\(f\)</span> has <span class="process-math">\(y_1\)</span> only in the range <span class="process-math">\(0 \leq y_1 \leq 2\text{.}\)</span> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/source/images/ch-6/ex-6-6-RI1.png" class="contained" alt="Image description."></div>
+</div> <div class="para logical" id="ex-6-6-2-1-2-2">
+<div class="para">When the green triangle region changes shape because <span class="process-math">\(1 \lt u\text{,}\)</span> it changes into a shape of the form in the following image. This time, we have a different point <span class="process-math">\((2, 2 - u)\text{,}\)</span> which is found by solving <span class="process-math">\(y_1 = y_2 + u\)</span> when <span class="process-math">\(y_1 = 2\)</span> for <span class="process-math">\(y_2 = 2 - u\text{.}\)</span> This region shape holds when <span class="process-math">\(1 \leq u \leq 2\text{,}\)</span> because <span class="process-math">\(u = 1\)</span> is the point at which the region changed shape, and when <span class="process-math">\(u = 2\text{,}\)</span> we get <span class="process-math">\((u, 0) = (2, 2 - u) = (2, 0)\)</span> and the region covers the entire support of <span class="process-math">\(f\text{.}\)</span> Thus, the support of <span class="process-math">\(f_U\)</span> will be <span class="process-math">\(0 \leq u \leq 2\text{,}\)</span> with different parts for <span class="process-math">\(0 \leq u \leq 1\)</span> and <span class="process-math">\(1 \leq u \leq 2\text{.}\)</span> <div class="image-box" style="width: %; margin-left: NaN%; margin-right: NaN%;"><img src="external/source/images/ch-6/ex-6-6-RI2.png" class="contained" alt="Image Description"></div> Then</div>
+<div class="displaymath process-math" id="ex-6-6-2-1-2-2-16">
+\begin{align*}
+F_U(u) \amp = 
+\begin{cases}
+0, \amp u \lt 0,\\
+\int_{y_2 = 0}^{y_2 = u} \int_{y_1 = 2y_2}^{y_1 = y_2 + u} 1 dy_1 dy_2\\
+= \int_{y_2 = 0}^{y_2 = u} y_1 \biggr|_{y_1 = 2y_2}^{y_1 = y_2 + u} dy_2\\
+= \int_{y_2 = 0}^{y_2 = u} \left[(y_2 + u) - (2y_2) \right] dy_2\\
+= \int_{y_2 = 0}^{y_2 = u} (u - y_2) dy_2\\
+= \left[uy_2 - \frac{1}{2} y_2^2 \right]_{y_2 = 0}^{y_2 = u}\\
+= \left(u(u) - \frac{1}{2} (u)^2 \right) - \left(u(0) - \frac{1}{2} (0)^2 \right)\\
+= \frac{1}{2} u^2, \amp 0 \leq u \leq 1,\\
+1 - \int_{y_1 = u}^{y_1 = 2} \int_{y_2 = 0}^{y_2 = y_1 - u} 1 dy_2 dy_1\\
+= 1 - \int_{y_1 = u}^{y_1 = 2} y_2 \biggr|_{y_2 = 0}^{y_2 = y_1 - u} dy_1\\
+= 1 - \int_{y_1 = u}^{y_1 = 2} \left[(y_1 - u) - (0) \right] dy_1\\
+= 1 - \int_{y_1 = u}^{y_1 = 2} (y_1 - u) dy_1\\
+= 1 - \left[\frac{1}{2} y_1^2 - uy_1 \right]_{y_1 = u}^{y_1 = 2}\\
+= 1 - \left[\left(\frac{1}{2} (2)^2 - u(2) \right) - \left(\frac{1}{2} (u)^2 - u(u) \right) \right]\\
+= -\frac{1}{2} u^2 + 2u - 1, \amp 1 \leq u \leq 2,\\
+1, \amp 2 \lt u
+\end{cases}\\
+\implies f_U(u) \amp = 
+\begin{cases}
+u, \amp 0 \leq u \leq 1,\\
+-u + 2, \amp 1 \leq u \leq 2,\\
+0, \amp \text{elsewhere.}
+\end{cases}
+\end{align*}
+</div>
+</div>
+</div></details></article><article class="task exercise-like" id="ex-6-6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="ex-6-6-3-1-1">Use the answer in part (a) to find <span class="process-math">\(E(U)\text{.}\)</span> Compare your results with those of <code class="code-inline tex2jax_ignore">[provisional cross-reference: ex-5-78]</code>
-</div></article></article><article class="exercise exercise-like" id="ex-6-7"><h4 class="heading"><span class="codenumber">6.7<span class="period">.</span></span></h4>
+</div>
+<div class="solutions"><details id="ex-6-6-3-2" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="ex-6-6-3-2-1">
+<div class="displaymath process-math" data-contains-math-knowls="" id="ex-6-6-3-2-1-1">
+\begin{align*}
+E(U) \amp = \int_{u = 0}^{u = 1} u \cdot u du + \int_{u = 1}^{u = 2} u \cdot (-u + 2) du\\
+\amp = \left[\frac{1}{3} u^3 \right]_{u = 0}^{u = 1} + \left[-\frac{1}{3} u^3 + u^2 \right]_{u = 1}^{u = 2}\\
+\amp = \left[\frac{1}{3} (1)^3 - \frac{1}{3} (0)^3 \right] + \left[\left(-\frac{1}{3} (2)^3 + (2)^2 \right) - \left(-\frac{1}{3} (1)^3 + (1)^2 \right) \right]\\\\
+\amp = \frac{1}{3} - \frac{8}{3} + 4 + \frac{1}{3} - 1 = 1
+\end{align*}
+</div>
+<div class="para">This is precisely what was found in <code class="code-inline tex2jax_ignore">[provisional cross-reference: ex-5-78]</code>.</div>
+</div></div></details></div></article></article><article class="exercise exercise-like" id="ex-6-7"><h4 class="heading"><span class="codenumber">6.7<span class="period">.</span></span></h4>
 <div class="introduction" id="ex-6-7-1"><div class="para" id="ex-6-7-1-1">Suppose that <span class="process-math">\(Z\)</span> has a standard normal distribution.</div></div>
 <article class="task exercise-like" id="ex-6-7-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="ex-6-7-2-1-1">Find the density function of <span class="process-math">\(U = Z^2\text{.}\)</span>
